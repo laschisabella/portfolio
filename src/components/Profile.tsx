@@ -4,16 +4,25 @@ import { BsLinkedin } from 'react-icons/bs';
 
 export default function Profile() {
   return (
-    <div className='w-4/7 h-screen p-12 flex justify-end mr-[200px] font-roboto'>
-      <div className='max-w-xl text-center flex flex-col justify-center mr-8'>
+    <div className='w-full h-screen p-12 flex justify-end font-roboto'>
+      <div className='max-w-xl text-center flex flex-col mr-8 mt-20'>
         <img
-          className='w-1/4 mx-auto'
+          className='w-36 mx-auto'
           src="https://github.com/laschisabella.png"
           alt="Profile picture"
         />
-        <h1 className=' font-mono text-5xl mt-12 mb-3'><span className='text-gray-200'>&#60;</span>Isabella Laschi <span className='text-gray-200'>/&#62;</span></h1>
-        <h2 className='text-3xl mb-12 font-bold'>full stack web developer</h2>
+        <h1 className=' font-mono text-3xl 2xl:text-5xl mt-12 mb-3'>
+          <span className='text-gray-200'>&#60;</span>
+          Isabella Laschi
+          <span className='text-gray-200'>/&#62;</span>
+        </h1>
+
+        <h2 className='text-xl 2xl:text-3xl mb-12 font-bold'>
+          full stack web developer
+        </h2>
+
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <br />Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
         <div className='flex justify-center m-5 gap-2'>
           <AiOutlineMail className='text-2xl' />
           <span className='leading-6 font-bold transition hover:text-gray-500'><a href="mailto:laschi.isabella@gmail.com">laschi.isabella@gmail.com</a></span>
