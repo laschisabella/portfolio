@@ -17,7 +17,7 @@ export default function Profile() {
     i18n.changeLanguage(navigator.language)
   }, [])
 
-  const handleChangeLanguage = (event) => {
+  const handleChangeLanguage = (event: any) => {
     i18n.changeLanguage(event.target.value)
     // change resume file
   }
