@@ -1,11 +1,43 @@
 import { GoMarkGithub } from 'react-icons/go';
 import { AiOutlineMail } from 'react-icons/ai';
 import { BsLinkedin } from 'react-icons/bs';
+import { SlGlobe } from 'react-icons/sl';
+
+import { useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
+
+import enResume from '../assets/Isabella-laschi-en.pdf'
 
 export default function Profile() {
+
+  const { t, i18n } = useTranslation()
+
+  // detect browser language for first render
+  useEffect(() => {
+    i18n.changeLanguage(navigator.language)
+  }, [])
+
+  const handleChangeLanguage = (event) => {
+    i18n.changeLanguage(event.target.value)
+    // change resume file
+  }
+
+
   return (
-    <div className='w-full p-12 flex font-roboto justify-center md:mr-10 md:justify-end'>
+    <div className='w-full md:h-screen p-12 flex font-roboto justify-center md:mr-10 md:justify-end'>
       <div className='max-w-xl text-center md:mt-20'>
+        <div className='mb-5 flex gap-2 justify-center items-center'>
+          <SlGlobe />
+          <select
+            className=' p-2 m-0 cursor-pointer text-center'
+            onChange={handleChangeLanguage}
+          >
+            <option value="la">{t('language.lang')}</option>
+            <option value="en">{t('language.english')}</option>
+            <option value="pt">{t('language.portuguese')}</option>
+          </select>
+        </div>
+
         <img
           className='w-28 sm:w-36 mx-auto'
           src="https://github.com/laschisabella.png"
@@ -18,10 +50,12 @@ export default function Profile() {
         </h1>
 
         <h2 className='text-xl 2xl:text-3xl mb-12 font-bold'>
-          full stack web developer
+          {t('profile.jobTitle')}
         </h2>
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <br />Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p>
+          {t('profile.introduction')}
+        </p>
 
         <div className='flex justify-center m-5 gap-2'>
           <AiOutlineMail className='text-2xl' />
@@ -43,11 +77,11 @@ export default function Profile() {
             <GoMarkGithub />
           </a>
           <a
-            href="https://github.com/laschisabella/portfolio/blob/main/src/assets/Isabella-laschi-en.pdf"
+            href={enResume}
             target="_blank"
             className='bg-black text-white px-8 py-1 ml-10 border-2 border-black font-bold transition hover:bg-white hover:text-black'
           >
-            resume
+            {t('profile.resumeButton')}
           </a>
         </div>
       </div>
