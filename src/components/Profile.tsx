@@ -4,10 +4,10 @@ import { BsLinkedin } from 'react-icons/bs';
 
 export default function Profile() {
   return (
-    <div className='w-full h-screen p-12 flex justify-end font-roboto'>
-      <div className='max-w-xl text-center flex flex-col mr-8 mt-20'>
+    <div className='w-full p-12 flex font-roboto justify-center md:mr-10 md:justify-end'>
+      <div className='max-w-xl text-center md:mt-20'>
         <img
-          className='w-36 mx-auto'
+          className='w-28 sm:w-36 mx-auto'
           src="https://github.com/laschisabella.png"
           alt="Profile picture"
         />
@@ -43,7 +43,7 @@ export default function Profile() {
             <GoMarkGithub />
           </a>
           <a
-            href=""
+            href="https://github.com/laschisabella/portfolio/blob/main/src/assets/Isabella-laschi-en.pdf"
             target="_blank"
             className='bg-black text-white px-8 py-1 ml-10 border-2 border-black font-bold transition hover:bg-white hover:text-black'
           >
