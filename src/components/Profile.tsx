@@ -6,10 +6,10 @@ import { SlGlobe } from 'react-icons/sl';
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import enResume from '../assets/isabella-laschi-en.pdf'
-import ptResume from '../assets/isabella-laschi-pt.pdf'
-
 export default function Profile() {
+
+  const enResume = "https://drive.google.com/file/d/1xy3ALzo3lQGQC1mK_3_1lMgkTSgp_4Mq/view?usp=share_link"
+  const ptResume = "https://drive.google.com/file/d/1a92GJ60gsyp9PUENxLhlii3EOt61l_t_/view?usp=share_link"
 
   const { t, i18n } = useTranslation()
 
