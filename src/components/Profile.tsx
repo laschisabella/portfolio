@@ -30,7 +30,6 @@ export default function Profile() {
     }
   }
 
-
   return (
     <div className='w-full md:h-screen p-12 flex font-roboto justify-center md:mr-10 md:justify-end'>
       <div className='max-w-xl text-center md:mt-8 2xl:mt-20'>
