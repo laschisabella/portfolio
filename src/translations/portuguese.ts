@@ -6,7 +6,7 @@ export const portuguese = {
   },
   profile: {
     jobTitle: "desenvolvedora full stack",
-    introduction: "Sou uma desenvolvedora web e mobile focada no ecossistema JavaScript com 3+ anos de experiência no mundo da tecnologia e do e-commerce. Trabalhando diretamente com aplicações centralizadas na experiência do usuário, projetei e desenvolvi funcionalidades em diversos projetos. Reuni aqui os principais exemplos das tecnologias e métodos que já utilizei, fique a vontade para conferir :)",
+    introduction: "Sou uma desenvolvedora web e mobile focada no ecossistema JavaScript com 3+ anos de experiência no mundo da tecnologia e do e-commerce. Trabalhando diretamente com aplicações centralizadas na experiência do usuário, projetei e desenvolvi funcionalidades em diversos projetos. Reuni aqui os principais exemplos das tecnologias e métodos que já utilizei, fique a vontade para conferir ou entrar em contato com os links abaixo :)",
     resumeButton: "currículo",
   },
   projects: {
