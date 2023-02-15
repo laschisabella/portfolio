@@ -43,7 +43,7 @@ export default function Profile() {
             <option value="en">{t('language.english')}</option>
             <option value="pt">{t('language.portuguese')}</option>
           </select>
-          <div className="ml-2 bg-black text-white px-8 py-1 ml-10 border-2 border-black font-bold transition hover:bg-white hover:text-black cursor-pointer lowercase md:hidden">
+          <div className="ml-2 bg-black text-white px-8 py-1 border-2 border-black font-bold transition hover:bg-white hover:text-black cursor-pointer lowercase md:hidden">
             <a href="#projects">{t('projects.title')}</a>
           </div>
         </div>
@@ -54,15 +54,17 @@ export default function Profile() {
           src="https://github.com/laschisabella.png"
           alt="Profile picture"
         />
-        <h1 className=' font-mono text-3xl 2xl:text-5xl mt-12 mb-3'>
-          <span className='text-gray-200'>&#60;</span>
-          Isabella Laschi
-          <span className='text-gray-200'>/&#62;</span>
-        </h1>
+        <div className='m-5 md:my-10'>
+          <h1 className='font-mono text-3xl 2xl:text-5xl mb-2'>
+            <span className='text-gray-200'>&#60;</span>
+            Isabella Laschi
+            <span className='text-gray-200'>/&#62;</span>
+          </h1>
 
-        <h2 className='text-xl 2xl:text-3xl mb-12 font-bold'>
-          {t('profile.jobTitle')}
-        </h2>
+          <h2 className='text-xl 2xl:text-3xl font-bold'>
+            {t('profile.jobTitle')}
+          </h2>
+        </div>
 
         <p>
           {t('profile.introduction')}
