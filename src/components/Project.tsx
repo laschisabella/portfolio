@@ -24,7 +24,7 @@ export default function Project({ title, description, pubLink, repoLink, repoBut
           {description}
         </p>
       </div>
-      <div className='w-full md:w-1/4 flex flex-col justify-center content-center font-bold gap-2 text-center mt-9'>
+      <div className='min-w-min w-full md:w-1/4 flex flex-col justify-center content-center font-bold gap-2 text-center mt-9'>
         <a
           className=' bg-white text-black p-1 transition hover:bg-gray-400 hover:text-white'
           href={pubLink}

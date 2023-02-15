@@ -3,7 +3,7 @@ import ProjectsContainer from './components/ProjectsContainer';
 
 export default function App() {
   return (
-    <div className='flex flex-col md:flex-row'>
+    <div className='flex flex-col md:flex-row scroll-smooth'>
       <Profile />
       <ProjectsContainer />
     </div>

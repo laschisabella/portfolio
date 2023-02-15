@@ -3,10 +3,11 @@ import { AiOutlineMail } from 'react-icons/ai';
 import { BsLinkedin } from 'react-icons/bs';
 import { SlGlobe } from 'react-icons/sl';
 
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import enResume from '../assets/Isabella-laschi-en.pdf'
+import enResume from '../assets/isabella-laschi-en.pdf'
+import ptResume from '../assets/isabella-laschi-pt.pdf'
 
 export default function Profile() {
 
@@ -17,26 +18,37 @@ export default function Profile() {
     i18n.changeLanguage(navigator.language)
   }, [])
 
+  const [resumeFile, setResumeFile] = useState((navigator.language.startsWith("pt")) ? ptResume : enResume)
+
   const handleChangeLanguage = (event: any) => {
     i18n.changeLanguage(event.target.value)
     // change resume file
+    if (event.target.value == "pt") {
+      setResumeFile(ptResume)
+    } else {
+      setResumeFile(enResume)
+    }
   }
 
 
   return (
     <div className='w-full md:h-screen p-12 flex font-roboto justify-center md:mr-10 md:justify-end'>
-      <div className='max-w-xl text-center md:mt-20'>
+      <div className='max-w-xl text-center md:mt-8 2xl:mt-20'>
         <div className='mb-5 flex gap-2 justify-center items-center'>
           <SlGlobe />
           <select
             className=' p-2 m-0 cursor-pointer text-center'
             onChange={handleChangeLanguage}
           >
-            <option value="la">{t('language.lang')}</option>
+            <option value="la" >{t('language.lang')}</option>
             <option value="en">{t('language.english')}</option>
             <option value="pt">{t('language.portuguese')}</option>
           </select>
+          <div className="ml-2 bg-black text-white px-8 py-1 ml-10 border-2 border-black font-bold transition hover:bg-white hover:text-black cursor-pointer lowercase md:hidden">
+            <a href="#projects">{t('projects.title')}</a>
+          </div>
         </div>
+
 
         <img
           className='w-28 sm:w-36 mx-auto'
@@ -77,7 +89,7 @@ export default function Profile() {
             <GoMarkGithub />
           </a>
           <a
-            href={enResume}
+            href={resumeFile}
             target="_blank"
             className='bg-black text-white px-8 py-1 ml-10 border-2 border-black font-bold transition hover:bg-white hover:text-black'
           >

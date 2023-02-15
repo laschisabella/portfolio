@@ -6,7 +6,7 @@ export default function ProjectsContainer() {
   const { t, i18n } = useTranslation()
 
   return (
-    <div className='w-full bg-slate-200'>
+    <div id="projects" className='w-full bg-slate-200'>
       <h1 className='font-mono text-3xl p-12  2xl:text-5xl 2xl:p-16'>
         <span className='text-white'>&#60;</span>
         {t('projects.title')}
