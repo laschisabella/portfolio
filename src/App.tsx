@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import About from "./components/About";
-import Skill from "./components/Skill";
-import Project from "./components/Project";
+import Skills from "./components/Skills";
+import Projects from "./components/Projects";
 import { useTranslation } from 'react-i18next';
 
 export default function App() {
@@ -15,9 +15,9 @@ export default function App() {
   }, [])
 
   return (
-    <div className="flex items-start justify-center min-h-screen bg-gray-900 max-w-screen font-roboto">
+    <div className="flex items-center justify-center min-h-screen bg-gray-900 max-w-screen font-roboto">
       {/* wrapper */}
-     <div className="flex w-full max-w-screen-lg gap-10 mx-5 mt-16">
+     <div className="flex items-center max-w-screen-lg gap-10 m-8">
       {/* left */}
       <div className="max-w-xs">
         <div className="flex flex-col items-center text-white">
@@ -28,32 +28,20 @@ export default function App() {
         <About />
       </div>
       {/* right */}
-      <div className="w-full">
+      <div className="w-full h-max">
         <div className="flex gap-2 text-center justify-evenly ">
           <div 
-            className="w-full py-1 ml-3 bg-yellow-200 cursor-pointer rounded-t-md"
+            className="flex items-center justify-center w-full p-2 ml-2 text-sm font-bold text-gray-900 uppercase bg-yellow-200 cursor-pointer rounded-t-md"
             onClick={() => setTab('skills')}
-          >{t('tabs.tab1')}</div>
+          ><p>{t('tabs.tab1')}</p></div>
           <div 
-            className="w-full py-1 mr-3 bg-purple-700 cursor-pointer rounded-t-md"
+            className="flex items-center justify-center w-full p-2 mr-2 text-sm font-bold text-purple-300 uppercase bg-purple-700 cursor-pointer rounded-t-md"
             onClick={() => setTab('projects')}
-          >{t('tabs.tab2')}</div>
+          ><p>{t('tabs.tab2')}</p></div>
         </div>
 
-        { tab == 'skills' && 
-          <div className="p-8 mb-16 bg-yellow-200 rounded-md">
-            <Skill />
-            <Skill />
-            <Skill />
-          </div>
-         }
-        { tab == 'projects' && 
-          <div className="flex flex-col gap-10 p-12 mb-16 bg-purple-700 rounded-md">
-            <Project />
-            <Project />
-            <Project />
-          </div>
-         }
+        { tab == 'skills' && <Skills /> }
+        { tab == 'projects' && <Projects /> }
       </div>
      </div>
     </div>
