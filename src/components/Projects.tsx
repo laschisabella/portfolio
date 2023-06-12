@@ -9,17 +9,9 @@ import {
 } from '@chakra-ui/react'
 import { useTranslation } from 'react-i18next';
 
-interface ProjectsI {
-  name: string;
-  description: string;
-  categories: Array<string>;
-  urlRepository: string;
-  urlProduction: string;
-}
-
 export default function Project(){
 
-  const { t, i18n } = useTranslation()
+  const { t } = useTranslation()
 
   const projects = [
     {
