@@ -14,6 +14,22 @@ export const portuguese = {
   },
   skills: {
     intro: 'PORTUGUÊS Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto ipsam expedita libero, pariatur ullam ut iusto enim sint repellat veniam mollitia illo sit. Recusandae itaque hic maxime reiciendis esse quo?',
+    skill1: {
+      name: 'front-end',
+      description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam rem facere velit! Voluptate ea libero ipsa reiciendis soluta dolores exercitationem magni saepe, vel architecto nesciunt est omnis nisi dolorum eum.',
+    },
+    skill2: {
+      name: 'habilidade 2',
+      description: 'habilidade 2',
+    },
+    skill3: {
+      name: 'habilidade 3',
+      description: 'habilidade 3',
+    },
+    skill4: {
+      name: 'habilidade 4',
+      description: 'habilidade 4',
+    },
   },
   projects: {
     intro: 'PORTUGUÊS Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto ipsam expedita libero, pariatur ullam ut iusto enim sint repellat veniam mollitia illo sit. Recusandae itaque hic maxime reiciendis esse quo?',

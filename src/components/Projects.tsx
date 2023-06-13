@@ -7,11 +7,9 @@ import {
   AccordionIcon,
   Box,
 } from '@chakra-ui/react'
-import { useTranslation } from 'react-i18next';
+import { t } from "i18next";
 
 export default function Project(){
-
-  const { t } = useTranslation()
 
   const projects = [
     {
@@ -23,28 +21,6 @@ export default function Project(){
         'cat 3',
       ],
       urlRepository: 'https://www.google.com',
-      urlProduction: 'name1',
-    },
-    {
-      name: t('projects.project2.name'),
-      description: t('projects.project2.description'),
-      categories: [
-        'cat 1',
-        'cat 2',
-      ],
-      urlRepository: 'name1',
-      urlProduction: 'name1',
-    },
-    {
-      name: t('projects.project3.name'),
-      description: t('projects.project3.description'),
-      categories: [
-        'cat 1',
-        'cat 2',
-        'cat 3',
-        'cat 4',
-      ],
-      urlRepository: 'name1',
       urlProduction: 'name1',
     },
   ]

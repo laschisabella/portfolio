@@ -17,7 +17,7 @@ export default function App() {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-900 max-w-screen font-roboto">
       {/* wrapper */}
-     <div className="flex items-center max-w-screen-lg gap-10 m-8">
+     <div className="flex flex-col items-center max-w-screen-lg gap-10 m-8 md:flex-row">
       {/* left */}
       <div className="max-w-xs">
         <div className="flex flex-col items-center text-white">
