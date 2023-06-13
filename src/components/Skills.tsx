@@ -19,6 +19,7 @@ export default function Skills(){
         'React.JS',
         'Next.JS',
         'Tailwind CSS',
+        'TypeScript',
       ],
     },
     {
@@ -61,7 +62,7 @@ export default function Skills(){
             <AccordionPanel pb={4}>
               <div className="">
                 <p>{skill.description}</p>
-                <ul className="flex justify-center gap-3 font-bold text-gray-100 uppercase">
+                <ul className="flex justify-center gap-3 mt-5 mb-3 font-bold text-gray-100">
                   {
                     skill.categories?.map(cat => (
                       <li className="px-3 py-1 bg-yellow-900 rounded-full">{cat}</li>
