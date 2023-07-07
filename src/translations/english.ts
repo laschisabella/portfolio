@@ -1,19 +1,10 @@
 export const english = {
   about: {
-    portuguese: "PT",
-    english: "EN",
     titleFirst: "About",
     titleSecond: "me",
     description: "Full Stack Developer specializing in the JavaScript ecosystem, with over 3 years of expertise in both end-to-end web development tools and user-centered applications.",
     location: "Sao Paulo, Brazil",
     button: "resume",
-  },
-  tabs: {
-    tab1:"skills",
-    tab2:"projects",
-  },
-  skills: {
-
   },
   projects: {
     intro: 'Here are a few projects that apply web development concepts and solve specific challenges.',
