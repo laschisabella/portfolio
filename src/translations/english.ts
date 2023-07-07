@@ -4,7 +4,7 @@ export const english = {
     english: "EN",
     titleFirst: "About",
     titleSecond: "me",
-    description: "I'm a web and mobile developer focused on the JavaScript ecosystem with 3+ years of experience in the world of technology and e-commerce. Working directly with user experience-centered applications.",
+    description: "Full Stack Developer specializing in the JavaScript ecosystem, with over 3 years of expertise in both end-to-end web development tools and user-centered applications.",
     location: "Sao Paulo, Brazil",
     button: "resume",
   },
@@ -16,18 +16,18 @@ export const english = {
 
   },
   projects: {
-    intro: 'INGLÊS Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto ipsam expedita libero, pariatur ullam ut iusto enim sint repellat veniam mollitia illo sit. Recusandae itaque hic maxime reiciendis esse quo?',
+    intro: 'Here are a few projects that apply web development concepts and solve specific challenges.',
+    buttons: {
+      repository: 'repository',
+      production: 'production',
+    },
     project1: {
-      name: 'name project one',
-      description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto ipsam expedita libero, pariatur ullam ut iusto enim sint repellat veniam mollitia illo sit. Recusandae itaque hic maxime reiciendis esse quo?',
+      name: "laschisa's tech blog",
+      description: 'test',
     },
     project2: {
-      name: 'name project TWO',
-      description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto ipsam expedita libero, pariatur ullam ut iusto enim sint repellat veniam mollitia illo sit. Recusandae itaque hic maxime reiciendis esse quo?',
-    },
-    project3: {
-      name: 'name project THREE',
-      description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto ipsam expedita libero, pariatur ullam ut iusto enim sint repellat veniam mollitia illo sit. Recusandae itaque hic maxime reiciendis esse quo?',
+      name: "Node.js Fundamentals",
+      description: 'test',
     },
   },
 }

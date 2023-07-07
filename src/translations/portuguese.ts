@@ -4,7 +4,7 @@ export const portuguese = {
     english: "inglês",
     titleFirst: "Sobre",
     titleSecond: "mim",
-    description: "Desenvolvedora web e mobile focada no ecossistema JavaScript com 3+ anos de experiência no mundo da tecnologia e do e-commerce. Trabalhando diretamente com aplicações centralizadas na experiência do usuário.",
+    description: "Desenvolvedora Full Stack especializada no ecossistema JavaScript, com mais de 3 anos de experiência em ferramentas de desenvolvimento web completo e aplicações centradas na experiência do usuário.",
     location: "São Paulo, Brasil",
     button: "currículo",
   },
@@ -32,18 +32,18 @@ export const portuguese = {
     },
   },
   projects: {
-    intro: 'PORTUGUÊS Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto ipsam expedita libero, pariatur ullam ut iusto enim sint repellat veniam mollitia illo sit. Recusandae itaque hic maxime reiciendis esse quo?',
+    intro: 'Aqui estão alguns projetos que aplicam conceitos de desenvolvimento web e solucionam desafios específicos.',
+    buttons: {
+      repository: 'repositório',
+      production: 'produção',
+    },
     project1: {
-      name: 'NOME DO PROJETO UM',
-      description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto ipsam expedita libero, pariatur ullam ut iusto enim sint repellat veniam mollitia illo sit. Recusandae itaque hic maxime reiciendis esse quo?',
+      name: "laschisa's tech blog",
+      description: 'teste',
     },
     project2: {
-      name: 'NOME DO PROJETO DOIS',
-      description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto ipsam expedita libero, pariatur ullam ut iusto enim sint repellat veniam mollitia illo sit. Recusandae itaque hic maxime reiciendis esse quo?',
-    },
-    project3: {
-      name: 'NOME DO PROJETO TRES',
-      description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto ipsam expedita libero, pariatur ullam ut iusto enim sint repellat veniam mollitia illo sit. Recusandae itaque hic maxime reiciendis esse quo?',
+      name: "Fundamentos de Node.js",
+      description: 'teste',
     },
   },
 }

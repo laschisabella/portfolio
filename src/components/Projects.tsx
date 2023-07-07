@@ -16,21 +16,31 @@ export default function Project(){
       name: t('projects.project1.name'),
       description: t('projects.project1.description'),
       categories: [
-        'cat 1',
-        'cat 2',
-        'cat 3',
+        'Next.js',
+        'mongoDB',
+        'Next Auth',
       ],
-      urlRepository: 'https://www.google.com',
-      urlProduction: 'name1',
+      urlRepository: 'https://github.com/laschisabella/tech-blog',
+      urlProduction: 'https://tech-blog-laschisabella.vercel.app/',
+    },
+    {
+      name: t('projects.project2.name'),
+      description: t('projects.project2.description'),
+      categories: [
+        'back-end',
+        'Node.js',
+        'regex',
+      ],
+      urlRepository: 'https://github.com/laschisabella/nodejs-fundamentals/',
     },
   ]
 
   return (
     <div className="flex flex-col gap-10 p-16 mb-16 bg-purple-700 rounded-md">
-      <p className="text-purple-300">{t('projects.intro')}</p>
-
+      <p className="text-center text-purple-300 ">{t('projects.intro')}</p>
       <Accordion 
         borderColor="#8b7591"
+        defaultIndex={[0]}
       >
         { projects.map(project => (
           <AccordionItem>
@@ -52,13 +62,17 @@ export default function Project(){
               </ul>
               <p className="m-0 text-purple-300">{project.description}</p>
               <div className="flex items-center gap-3 my-4 text-sm font-bold text-purple-300 uppercase">
-                <a href={project.urlProduction} target="_blank" className="flex items-center gap-1 transition hover:text-black">
-                  <CaretCircleDoubleRight size={20} className="text-purple-900" weight="bold"/>
-                  <p>production</p>
-                </a>
+                {
+                  project.urlProduction && (
+                    <a href={project.urlProduction} target="_blank" className="flex items-center gap-1 transition hover:text-black">
+                      <CaretCircleDoubleRight size={20} className="text-purple-900" weight="bold"/>
+                      <p>{t('projects.buttons.production')}</p>
+                    </a>
+                  )
+                }
                 <a href={project.urlRepository} target="_blank" className="flex items-center gap-1 transition hover:text-black">
                   <CaretCircleDoubleRight size={20} className="text-purple-900" weight="bold"/>
-                  <p>repository</p>
+                  <p>{t('projects.buttons.repository')}</p>
                 </a>
               </div>
             </AccordionPanel>
