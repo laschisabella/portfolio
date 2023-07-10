@@ -33,37 +33,35 @@ export default function Project(){
   ]
 
   return (
-    <div className="flex flex-col gap-10 p-16 mb-16 bg-yellow-200 rounded-md">
+    <div className="flex flex-col gap-10 p-10 mb-16 bg-yellow-200 rounded-md">
       <p className="text-center">{t('projects.intro')}</p>
-      
       <Accordion borderColor="#b1a358" >
         {
           projects.map(project => (
           <AccordionItem>
             <AccordionButton className="flex justify-between">
-              <h1 className="py-3 text-2xl text-gray-900 font-murecho">{project.name}</h1>
+              <div className="flex items-center justify-between w-full mr-5">
+                <h1 className="py-3 text-xl text-gray-900 font-murecho">{project.name}</h1>
+                {/* tech */}
+                <div className="flex justify-center gap-1 my-1">
+                  {
+                    project.tech.map(image => (
+                      <img 
+                        src={image}
+                        className="h-6 rounded-md"
+                      />
+                    ))
+                  }
+                </div>
+              </div>
               <AccordionIcon />
             </AccordionButton>
             <AccordionPanel className="flex flex-col">
-              
-              
               {/* description */}
               <p>{t('projects.project1.description')}</p>
 
-              {/* tech */}
-              <div className="flex gap-3 my-3">
-                {
-                  project.tech.map(image => (
-                    <img 
-                      src={image}
-                      className="h-6 rounded-md"
-                    />
-                  ))
-                }
-              </div>
-
               {/* buttons */}
-              <div className="flex mx-auto my-5 w-min">
+              <div className="flex mx-auto my-3 w-min">
               {
                   project.urlProduction && (
                     <a href={project.urlProduction} role="button" target="_blank" >
@@ -82,14 +80,13 @@ export default function Project(){
                 </a>
                 
               </div>
-              
+
               
             </AccordionPanel>
           </AccordionItem>
           ))
         }
       </Accordion>
-      
     </div>
   )
 }
