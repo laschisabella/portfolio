@@ -40,10 +40,10 @@ export default function Project(){
           projects.map(project => (
           <AccordionItem>
             <AccordionButton className="flex justify-between">
-              <div className="flex items-center justify-between w-full mr-5">
+              <div className="flex flex-col items-center justify-between w-full mr-5 sm:flex-row">
                 <h1 className="py-3 text-xl text-gray-900 font-murecho">{project.name}</h1>
                 {/* tech */}
-                <div className="flex justify-center gap-1 my-1">
+                <div className="flex flex-wrap justify-center gap-1 my-1">
                   {
                     project.tech.map(image => (
                       <img 
