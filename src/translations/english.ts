@@ -13,12 +13,12 @@ export const english = {
       production: 'production',
     },
     project1: {
-      name: "laschisa's tech blog",
-      description: 'test',
+      name: "Laschisa's Tech Blog",
+      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad necessitatibus libero consequuntur quod illum ipsum quia omnis dolor aperiam. Quisquam quod eius distinctio minima atque, inventore fugit illum? Neque, fuga.',
     },
     project2: {
       name: "Node.js Fundamentals",
-      description: 'test',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad necessitatibus libero consequuntur quod illum ipsum quia omnis dolor aperiam. Quisquam quod eius distinctio minima atque, inventore fugit illum? Neque, fuga.',
     },
   },
 }
