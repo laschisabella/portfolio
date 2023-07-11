@@ -1,4 +1,4 @@
-import { MapPin, At, GithubLogo, LinkedinLogo, CaretCircleDoubleRight} from "@phosphor-icons/react";
+import { MapPin, At, GithubLogo, LinkedinLogo, CaretDoubleRight} from "@phosphor-icons/react";
 import i18next from "i18next";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
@@ -25,7 +25,7 @@ export default function About(){
   };
 
   return(
-    <div className="p-8 my-5 text-gray-100 transition bg-gray-500 rounded-md">
+    <div className="p-8 mt-5 text-gray-100 transition bg-gray-500 rounded-md">
       <div className="flex items-center justify-end gap-2">
         <span className="text-sm font-bold">PT</span>
         <Switch 
@@ -67,9 +67,9 @@ export default function About(){
           target="_blank"
           className=""
         >
-          <div className="flex items-center gap-2 px-4 py-2 text-sm font-bold text-gray-100 uppercase transition bg-gray-900 rounded-md cursor-pointer hover:bg-gray-700">
-            <CaretCircleDoubleRight weight="fill" size={20} />
-            <p className="block mt-0.5">{t('about.button')}</p>
+          <div className="flex items-center gap-1 px-4 py-2 font-bold text-black uppercase transition cursor-pointer font-murecho hover:text-gray-100">
+            <CaretDoubleRight weight="bold" size={18} className="text-gray-100"/>
+            <p className="mb-0.5">{t('about.button')}</p>
           </div>
         </a>
       </div>

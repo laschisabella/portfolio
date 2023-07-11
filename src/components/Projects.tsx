@@ -1,4 +1,4 @@
-import { CaretCircleDoubleRight } from "@phosphor-icons/react";
+import { CaretDoubleRight } from "@phosphor-icons/react";
 import {
   Accordion,
   AccordionItem,
@@ -33,9 +33,12 @@ export default function Project(){
   ]
 
   return (
-    <div className="flex flex-col gap-10 p-10 mb-16 bg-yellow-200 rounded-md">
-      <p className="text-center">{t('projects.intro')}</p>
-      <Accordion borderColor="#b1a358" >
+    <div className="flex flex-col p-10 bg-yellow-200 rounded-md gap-7">
+      <div>
+        <h1 className="mb-3 text-2xl font-murecho">{t('projects.title')}</h1>
+        <p className="">{t('projects.intro')}</p>
+      </div>
+      <Accordion borderColor="#b1a358" defaultIndex={0} >
         {
           projects.map(project => (
           <AccordionItem>
@@ -61,21 +64,21 @@ export default function Project(){
               <p>{t('projects.project1.description')}</p>
 
               {/* buttons */}
-              <div className="flex mx-auto my-3 w-min">
+              <div className="flex gap-2 my-3 w-min">
               {
                   project.urlProduction && (
                     <a href={project.urlProduction} role="button" target="_blank" >
-                      <div className="flex items-center gap-1 text-sm font-bold text-purple-900 uppercase transition rounded-md cursor-pointer hover:text-purple-500">
-                        <CaretCircleDoubleRight weight="bold" size={18} />
-                        <p className="block mt-0.5">{t('projects.buttons.production')}</p>
+                      <div className="flex items-center gap-1 px-3 py-1 text-sm font-bold text-black uppercase transition rounded-md cursor-pointer hover:text-gray-700 font-murecho">
+                        <CaretDoubleRight weight="bold" size={20} className="text-purple-500 "/>
+                        <p className="mb-0.5">{t('projects.buttons.production')}</p>
                       </div>
                     </a>
                   )
                 }
                 <a href={project.urlRepository} role="button" target="_blank">
-                  <div className="flex items-center gap-1 px-4 text-sm font-bold text-gray-900 uppercase cursor-pointer transitionrounded-md hover:text-gray-700">
-                    <CaretCircleDoubleRight weight="bold" size={18}/>
-                    <p className="block mt-0.5">{t('projects.buttons.repository')}</p>
+                  <div className="flex items-center gap-1 px-3 py-1 text-sm font-bold text-black uppercase transition rounded-md cursor-pointer hover:text-gray-700 font-murecho">
+                    <CaretDoubleRight weight="bold" size={20} className="text-purple-500 "/> 
+                    <p className="mb-0.5">{t('projects.buttons.repository')}</p>
                   </div>
                 </a>
                 
