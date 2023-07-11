@@ -7,8 +7,8 @@ export const english = {
     button: "resume",
   },
   projects: {
-    title: 'Hello and welcome to a showcase of my work.',
-    intro: 'I invite you to take a look at some projects created to practice modern web development tools. Each project was developed with the purpose of exploring the latest trends and technologies in the industry, enhancing my technical and creative skills. I hope you enjoy the showcased work! Feel free to explore each project and get in touch if you have any questions or potential collaboration opportunities.',
+    title: 'Hello, welcome to my project gallery.',
+    intro: 'Take a look at some projects created with the purpose of exploring the latest trends in web development tools and methodologies, while enhancing technical and creative skills. I hope you enjoy the showcased projects; feel free to explore further and get in touch if you have any questions or collaboration opportunities.',
     buttons: {
       repository: 'repository',
       production: 'production',

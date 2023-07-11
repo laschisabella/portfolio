@@ -34,17 +34,17 @@ export default function Project(){
 
   return (
     <div className="flex flex-col p-10 bg-yellow-200 rounded-md gap-7">
-      <div>
+      <div className="mb-3">
         <h1 className="mb-3 text-2xl font-murecho">{t('projects.title')}</h1>
         <p className="">{t('projects.intro')}</p>
       </div>
-      <Accordion borderColor="#b1a358" defaultIndex={0} >
+      <Accordion borderColor="#b1a358" >
         {
           projects.map(project => (
           <AccordionItem>
             <AccordionButton className="flex justify-between">
               <div className="flex flex-col items-center justify-between w-full mr-5 sm:flex-row">
-                <h1 className="py-3 text-xl text-gray-900 font-murecho">{project.name}</h1>
+                <h1 className="py-3 text-xl text-black font-murecho">{project.name}</h1>
                 {/* tech */}
                 <div className="flex flex-wrap justify-center gap-1 my-1">
                   {
@@ -64,19 +64,19 @@ export default function Project(){
               <p>{t('projects.project1.description')}</p>
 
               {/* buttons */}
-              <div className="flex gap-2 my-3 w-min">
+              <div className="flex gap-3 my-3 w-min">
               {
                   project.urlProduction && (
                     <a href={project.urlProduction} role="button" target="_blank" >
-                      <div className="flex items-center gap-1 px-3 py-1 text-sm font-bold text-black uppercase transition rounded-md cursor-pointer hover:text-gray-700 font-murecho">
+                      <div className="flex gap-1 text-sm uppercase transition hover:text-purple-900 font-murecho">
                         <CaretDoubleRight weight="bold" size={20} className="text-purple-500 "/>
-                        <p className="mb-0.5">{t('projects.buttons.production')}</p>
+                        <p>{t('projects.buttons.production')}</p>
                       </div>
                     </a>
                   )
                 }
                 <a href={project.urlRepository} role="button" target="_blank">
-                  <div className="flex items-center gap-1 px-3 py-1 text-sm font-bold text-black uppercase transition rounded-md cursor-pointer hover:text-gray-700 font-murecho">
+                  <div className="flex gap-1 text-sm uppercase transition hover:text-purple-900 font-murecho">
                     <CaretDoubleRight weight="bold" size={20} className="text-purple-500 "/> 
                     <p className="mb-0.5">{t('projects.buttons.repository')}</p>
                   </div>
