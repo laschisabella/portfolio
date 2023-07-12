@@ -9,18 +9,18 @@ export default function About(){
   const { t, i18n } = useTranslation()
 
   const [checked, setChecked] = useState(!i18next.language.includes('pt') ? true : false);
-  const [cvUrl, setCvUrl] = useState(navigator.language.includes('pt') ? 'https://drive.google.com/file/d/1a92GJ60gsyp9PUENxLhlii3EOt61l_t_/view' : 'https://drive.google.com/file/d/1xy3ALzo3lQGQC1mK_3_1lMgkTSgp_4Mq/view')
+  const [cvUrl, setCvUrl] = useState(navigator.language.includes('pt') ? 'https://drive.google.com/file/d/1wS9IeErxHTGUOf2siVpHhthwoxv3Q4LS/view' : 'https://drive.google.com/file/d/1c9Lr4aS8ygKawTjK3cB-J4A8mE7b4RmF/view')
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setChecked(event.target.checked);
 
     if (i18next.language.includes('pt')) {
       i18n.changeLanguage('en-US')
-      setCvUrl('https://drive.google.com/file/d/1xy3ALzo3lQGQC1mK_3_1lMgkTSgp_4Mq/view')
+      setCvUrl('https://drive.google.com/file/d/1c9Lr4aS8ygKawTjK3cB-J4A8mE7b4RmF/view')
       
     } else if (!i18next.language.includes('pt')) {
       i18n.changeLanguage('pt-BR')
-      setCvUrl('https://drive.google.com/file/d/1a92GJ60gsyp9PUENxLhlii3EOt61l_t_/view')
+      setCvUrl('https://drive.google.com/file/d/1wS9IeErxHTGUOf2siVpHhthwoxv3Q4LS/view')
     }
   };
 
