@@ -63,7 +63,7 @@ export default function Project(){
   ]
 
   return (
-    <div className="flex flex-col w-full bg-purple-600 rounded-md p-14 gap-7">
+    <div className="flex flex-col w-full p-8 bg-purple-600 rounded-md md:p-14 gap-7">
       <div className="">
         <h1 className="text-3xl text-purple-800 font-murecho">
           <span className="text-purple-700">&lt;</span>
