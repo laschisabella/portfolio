@@ -94,7 +94,7 @@ export default function Project(){
             </AccordionButton>
             <AccordionPanel className="flex flex-col mt-1 text-gray-100 bg-purple-700 rounded-lg">
               {/* description */}
-              <div className="pr-5 m-5 overflow-y-auto h-52">
+              <div className="pr-5 m-5 overflow-y-auto h-80">
                 <p>{project.description.desc1}</p>
                 {
                   project.description.ul && (
