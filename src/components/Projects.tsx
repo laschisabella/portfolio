@@ -76,7 +76,7 @@ export default function Project(){
           projects.map(project => (
           <AccordionItem className="my-1">
             <AccordionButton className="flex justify-between gap-2 bg-purple-900 rounded-lg">
-              <div className="flex flex-col items-center justify-between w-full md:gap-12 md:flex-row">
+              <div className="flex items-center justify-between w-full gap-12">
                 <h1 className="py-3 pl-2 text-gray-100 text-md font-murecho hover:bg-yellow-700">{project.name}</h1>
                 {/* tech */}
                 <div className="flex flex-wrap justify-center gap-1">
@@ -117,7 +117,7 @@ export default function Project(){
                 }
               </div>
               {/* buttons */}
-              <div className="flex flex-col gap-3 mx-auto md:flex-row justify-content w-min">
+              <div className="flex gap-3 mx-auto justify-content w-min">
               {
                 project.urlProduction && (
                   <a href={project.urlProduction} role="button" target="_blank" >
