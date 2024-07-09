@@ -1,11 +1,6 @@
 import ProjectItem from "./ProjectItem";
 import getProjects from "../data/projectsData";
-import {
-  ClockCountdown,
-  ExclamationMark,
-  HourglassMedium,
-  Presentation,
-} from "@phosphor-icons/react";
+import comingSoonIcon from "../assets/comingsoon.svg";
 
 export default function Project() {
   const projects = getProjects();
@@ -22,14 +17,13 @@ export default function Project() {
           tech={project.tech}
         />
       ))}
+
       {projects.length === 0 && (
-        <div>
-          <ExclamationMark
-            size={"200"}
-            weight="fill"
-            className="text-yellow-500 "
-          />
-          <p>Projects coming soon!</p>
+        <div className="text-sm text-purple-300">
+          <img src={comingSoonIcon} className="w-60" />
+          <span className="mt-5 mb-1 text-lg uppercase font-murecho">
+            projects coming soon!
+          </span>
         </div>
       )}
     </div>

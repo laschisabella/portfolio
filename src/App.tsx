@@ -14,7 +14,7 @@ export default function App() {
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-900 max-w-screen font-roboto">
-      <div className="flex flex-col items-start max-w-screen-lg gap-8 m-20 md:flex-row">
+      <div className="flex flex-col items-center max-w-screen-lg gap-8 m-20 md:flex-row">
         <div className="max-w-xs">
           <Logo />
           <About />

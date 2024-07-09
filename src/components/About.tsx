@@ -8,13 +8,17 @@ import Button from "./Button";
 export default function About() {
   const { t, i18n } = useTranslation();
 
+  const PtCv =
+    "https://drive.google.com/file/d/1qWisNQQEY4EeMnht48WsBL8bqd5Vf1gN/view";
+  const EnCv =
+    "https://drive.google.com/file/d/1spP8wYN8hCjiRyV8GzZVjK0OpIE8k1qe/view";
+
   const [checked, setChecked] = useState(
-    !i18next.language.includes("pt") ? true : false
+    navigator.language.includes("pt") ? true : false
   );
+
   const [cvUrl, setCvUrl] = useState(
-    navigator.language.includes("pt")
-      ? "https://drive.google.com/file/d/1Uj-AUTBwH17aiP6okHyL7a0XcMT_1jgy/view"
-      : "https://drive.google.com/file/d/1CemLd49DZHBOgdIEEGE13jRUIZWOSPZ6/view"
+    navigator.language.includes("pt") ? PtCv : EnCv
   );
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -22,23 +26,19 @@ export default function About() {
 
     if (i18next.language.includes("pt")) {
       i18n.changeLanguage("en-US");
-      setCvUrl(
-        "https://drive.google.com/file/d/1CemLd49DZHBOgdIEEGE13jRUIZWOSPZ6/view"
-      );
+      setCvUrl(EnCv);
     } else if (!i18next.language.includes("pt")) {
       i18n.changeLanguage("pt-BR");
-      setCvUrl(
-        "https://drive.google.com/file/d/1Uj-AUTBwH17aiP6okHyL7a0XcMT_1jgy/view"
-      );
+      setCvUrl(PtCv);
     }
   };
 
   return (
     <div className="p-8 mt-5 text-gray-100 bg-gray-500 rounded-md">
       <div className="flex items-center justify-end gap-2">
-        <span className="text-sm font-bold">PT</span>
-        <Switch size="lg" isChecked={checked} onChange={handleChange} />
         <span className="text-sm font-bold">EN</span>
+        <Switch size="lg" isChecked={checked} onChange={handleChange} />
+        <span className="text-sm font-bold">PT</span>
       </div>
 
       <h1 className="text-2xl text-black">
