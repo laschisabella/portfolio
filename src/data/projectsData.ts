@@ -1,4 +1,4 @@
-import { DefaultTFuncReturn, t } from "i18next";
+import { DefaultTFuncReturn } from "i18next";
 
 export interface ProjectI {
   name: DefaultTFuncReturn;
