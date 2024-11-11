@@ -1,0 +1,75 @@
+import { useTranslation } from "react-i18next";
+import LangSwitch from "../components/LangSwitch";
+import {
+  MapPin,
+  RocketLaunch,
+  SealCheck,
+  UserFocus,
+} from "@phosphor-icons/react";
+
+const bulletPoints = [
+  {
+    icon: <SealCheck weight="fill" className="text-2xl text-purple-theme" />,
+    textKey: "bullet1",
+  },
+  {
+    icon: <RocketLaunch weight="fill" className="text-2xl text-yellow-theme" />,
+    textKey: "bullet2",
+  },
+  {
+    icon: <UserFocus weight="fill" className="text-2xl text-purple-theme" />,
+    textKey: "bullet3",
+  },
+  {
+    icon: <MapPin weight="fill" className="text-2xl text-yellow-theme" />,
+    textKey: "bullet4",
+  },
+];
+
+const BulletPoint = ({ icon, text }: { icon: JSX.Element; text: string }) => (
+  <div className="flex items-center gap-3 mb-2">
+    {icon}
+    <p>{text}</p>
+  </div>
+);
+
+export default function About() {
+  const { t } = useTranslation("about");
+
+  return (
+    <div className="relative flex items-center w-full py-20 overflow-hidden bg-gray-900 lg:flex-col lg:min-h-screen lg:w-[50vw]">
+      <LangSwitch />
+      <div className="flex flex-col items-center my-10">
+        <div className="relative">
+          <img
+            src="/logo.png"
+            alt="Isabella Laschi photo"
+            className="w-72 opacity-20"
+          />
+          <img
+            src="https://github.com/laschisabella.png"
+            alt="Isabella Laschi photo"
+            className="absolute rounded-full w-[9.5rem] shadow-custom left-[4.2rem] top-7"
+          />
+        </div>
+        <span className="mt-3 text-3xl font-black text-gray-100 uppercase font-murecho">
+          Isabella Laschi
+        </span>
+        <span className="text-xl font-major text-purple-theme">
+          front-end & ux
+        </span>
+      </div>
+      <p className="max-w-md text-gray-200">{t("intro")}</p>
+      <div className="flex flex-col max-w-md mt-5 text-gray-200">
+        {bulletPoints.map(({ icon, textKey }) => (
+          <BulletPoint key={textKey} icon={icon} text={t(textKey)} />
+        ))}
+      </div>
+      <img
+        src="/about-bg.png"
+        alt="background texture"
+        className="absolute -bottom-10"
+      />
+    </div>
+  );
+}

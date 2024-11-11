@@ -2,41 +2,43 @@
 export default {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    colors: {
-      transparent: "transparent",
-      black: "#000",
-      white: "#fff",
-      gray: {
-        100: "#E9E9E9",
-        200: "#979797",
-        500: "#6B6B6B",
-        700: "#4d4d4d",
-        900: "#343434",
-        1000: "#1a1a1a",
+    extend: {
+      boxShadow: {
+        custom:
+          "0 5px 15px 3px rgba(0, 0, 0, 1), 0 1px 2px 2px rgba(0, 0, 0, 1)",
       },
-      yellow: {
-        200: "#D2C373",
-        300: "#e6deb2",
-        500: "#CBAC08",
-        800: "#aea77e",
-        900: "#6f6006",
+      colors: {
+        gray: {
+          100: "#d4d4d4",
+          200: "#CFCFCF",
+          300: "#ABABAB",
+          600: "#646464",
+          900: "#333",
+        },
+        yellow: {
+          theme: "#CBAC08",
+        },
+        purple: {
+          theme: "#946AA3",
+        },
       },
-      purple: {
-        100: "#C3A9CC",
-        200: "#A280AD",
-        300: "#dbd3de",
-        500: "#946AA3",
-        600: "#a08ba7",
-        700: "#755F7D",
-        800: "#29212c",
-        900: "#514257",
+      fontFamily: {
+        major: ["Major Mono Display", "monospace"],
+        murecho: ["Murecho", "sans-serif"],
+        roboto: ["Roboto", "sans-serif"],
       },
-    },
-    fontFamily: {
-      major: ["Major Mono Display", "monospace"],
-      murecho: ["Murecho", "sans-serif"],
-      roboto: ["Roboto", "sans-serif"],
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        ".text-balance": {
+          "text-wrap": "balance",
+        },
+        ".testing": {
+          border: "solid 2px red",
+        },
+      });
+    },
+  ],
 };

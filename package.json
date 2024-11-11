@@ -13,7 +13,7 @@
     "@chakra-ui/react": "^2.7.0",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
-    "@phosphor-icons/react": "^2.0.9",
+    "@phosphor-icons/react": "^2.1.7",
     "framer-motion": "^10.12.16",
     "i18next": "^22.5.0",
     "i18next-browser-languagedetector": "^7.0.2",

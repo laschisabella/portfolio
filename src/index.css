@@ -2,23 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Works on Firefox */
-body {
-  scrollbar-width: thin;
-  scrollbar-color: #000 #755F7D;
+/* Adiciona a animação de deslizamento */
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
-/* Works on Chrome, Edge, and Safari */
-*::-webkit-scrollbar {
-  width: 12px;
-}
-
-*::-webkit-scrollbar-track {
-  background: #755F7D ;
-  border-radius: 20px;
-}
-
-*::-webkit-scrollbar-thumb {
-  background-color: #000;
-  border-radius: 20px;
+.service-card {
+  animation: slideIn 0.8s ease forwards; /* Aumenta a duração da animação */
+  opacity: 0;
 }

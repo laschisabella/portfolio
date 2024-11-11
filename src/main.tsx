@@ -1,29 +1,15 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
-import { ChakraProvider, extendTheme } from '@chakra-ui/react'
-import './index.css'
-import './translations/i18n';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App.tsx";
+import { ChakraProvider } from "@chakra-ui/react";
+import "./index.css";
+import "./locales/i18n.ts";
+import chakraTheme from "./themes/chakraTheme.ts";
 
-const theme = extendTheme({ 
-  components: {
-    Switch: {
-      baseStyle: {
-        track: {
-          bg: '#C3A9CC',
-        },
-        thumb: {
-          bg: '#946AA3',
-        },
-      },
-    },
-  },
- })
-
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <ChakraProvider theme={theme}>
+    <ChakraProvider theme={chakraTheme}>
       <App />
     </ChakraProvider>
-  </React.StrictMode>,
-)
+  </React.StrictMode>
+);
