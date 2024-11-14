@@ -2,19 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Adiciona a animação de deslizamento */
-@keyframes slideIn {
-  from {
-    transform: translateY(20px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-.service-card {
-  animation: slideIn 0.8s ease forwards; /* Aumenta a duração da animação */
-  opacity: 0;
+.glass-effect {
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3px);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }

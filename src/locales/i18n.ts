@@ -14,19 +14,19 @@ i18n.use(initReactI18next).init({
     en: {
       about: enAbout,
       services: enServices,
-      projetcs: enProjects,
+      projects: enProjects,
       contact: enContact,
     },
     pt: {
       about: ptAbout,
       services: ptServices,
-      projetcs: ptContact,
+      projects: ptContact,
       contact: ptProjects,
     },
   },
   lng: "pt",
   fallbackLng: "en",
-  ns: ["about", "services", "projetcs", "contact"],
+  ns: ["about", "services", "projects", "contact"],
   defaultNS: "common",
   interpolation: {
     escapeValue: false,

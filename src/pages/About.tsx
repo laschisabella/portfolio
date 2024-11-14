@@ -37,9 +37,9 @@ export default function About() {
   const { t } = useTranslation("about");
 
   return (
-    <div className="relative flex items-center w-full py-20 overflow-hidden bg-gray-900 lg:flex-col lg:min-h-screen lg:w-[50vw]">
+    <div className="relative flex items-center w-full py-20 overflow-hidden bg-gray-900 lg:flex-col lg:min-h-screen lg:w-[40vw]">
       <LangSwitch />
-      <div className="flex flex-col items-center my-10">
+      <div className="flex flex-col items-center w-full my-10">
         <div className="relative">
           <img
             src="/logo.png"
@@ -66,7 +66,7 @@ export default function About() {
         ))}
       </div>
       <img
-        src="/about-bg.png"
+        src="/src/assets/about-bg.png"
         alt="background texture"
         className="absolute -bottom-10"
       />
