@@ -37,19 +37,19 @@ export default function About() {
   const { t } = useTranslation("about");
 
   return (
-    <div className="relative flex items-center w-full py-20 overflow-hidden bg-gray-900 lg:flex-col lg:min-h-screen lg:w-[40vw]">
+    <div className="relative flex items-end lg:items-center w-full p-5 lg:p-20 overflow-hidden bg-gray-900 flex-col lg:min-h-screen lg:w-[40vw]">
       <LangSwitch />
-      <div className="flex flex-col items-center w-full my-10">
+      <div className="flex flex-col items-center w-full my-3 lg:my-10">
         <div className="relative">
           <img
             src="/logo.png"
             alt="Isabella Laschi photo"
-            className="w-72 opacity-20"
+            className="w-52 lg:w-72 opacity-20"
           />
           <img
             src="https://github.com/laschisabella.png"
             alt="Isabella Laschi photo"
-            className="absolute rounded-full w-[9.5rem] shadow-custom left-[4.2rem] top-7"
+            className="absolute rounded-full w-32 lg:w-[9.5rem] shadow-custom left-[4.2rem] top-7"
           />
         </div>
         <span className="mt-3 text-3xl font-black text-gray-100 uppercase font-murecho">

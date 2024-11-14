@@ -1,7 +1,6 @@
 import { CaretDoubleLeft, CaretDoubleRight } from "@phosphor-icons/react";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import Button from "../components/Button";
 
 type ProjectCardProps = {
   title: string;
@@ -17,9 +16,9 @@ const ProjectCard = ({
   description,
   img,
   tech,
-  repo = "",
-  deploy,
-}: ProjectCardProps) => (
+}: // repo = "",
+// deploy,
+ProjectCardProps) => (
   <div className="flex flex-col items-center gap-5 p-5">
     <img src={img} alt="project image" className="max-w-xl" />
     <ul className="flex gap-3">
@@ -36,10 +35,7 @@ const ProjectCard = ({
       <h1 className="pb-5 text-2xl text-gray-900 font-murecho">{title}</h1>
       <p className="text-lg text-gray-900 opacity-70">{description}</p>
     </div>
-    <div className="flex">
-      <Button title={"Repositório"} link={repo} color="text-red-900" />
-      <Button title={"Visite"} link={deploy} />
-    </div>
+    <div className="flex"></div>
   </div>
 );
 
@@ -83,7 +79,7 @@ export default function Projects() {
       id="projects"
     >
       <div className="p-[5%] h-full">
-        <div className="relative flex flex-col items-center gap-5 overflow-hidden">
+        <div className="relative flex flex-col items-center h-full gap-5 overflow-hidden">
           <CaretDoubleLeft
             onClick={handlePrevious}
             className="z-10 absolute top-[50%] cursor-pointer -translate-y-[50%] left-5 text-7xl"
