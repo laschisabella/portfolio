@@ -5,14 +5,17 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import Projects from "./pages/Projects";
-import { GithubLogo, LinkedinLogo, WhatsappLogo } from "@phosphor-icons/react";
+import { LinkedinLogo, GithubLogo, WhatsappLogo } from "@phosphor-icons/react";
+
+type SectionId = "services" | "projects" | "contact";
+type SectionRefs = { [key in SectionId]: HTMLElement | null };
 
 export default function App() {
-  const { i18n } = useTranslation();
-  const [activeSection, setActiveSection] = useState("intro");
+  const { i18n, t } = useTranslation("common");
+  const [activeSection, setActiveSection] = useState<SectionId>("services");
 
-  const sectionsRef = useRef<{ [key: string]: HTMLElement | null }>({
-    intro: null,
+  const sectionsRef = useRef<SectionRefs>({
+    services: null,
     projects: null,
     contact: null,
   });
@@ -25,7 +28,7 @@ export default function App() {
     (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          setActiveSection(entry.target.id);
+          setActiveSection(entry.target.id as SectionId);
         }
       });
     },
@@ -46,59 +49,81 @@ export default function App() {
 
   const defaultNavLink = "px-1 py-px";
 
-  const renderNavLink = (id: string, label: string) => (
-    <a
-      href={`#${id}`}
-      className={
-        activeSection === id
-          ? `text-purple-theme cursor-not-allowed border-b-2 border-purple-theme ${defaultNavLink}`
-          : `text-gray-900 hover:text-gray-600 transition ${defaultNavLink}`
-      }
-    >
-      {label}
-    </a>
-  );
+  const renderNavLink = (id: SectionId, label: string) => {
+    const colors: Record<SectionId, string> = {
+      services: "text-purple-theme border-purple-theme",
+      projects: "text-gray-100 border-gray-100",
+      contact: "text-gray-100 border-gray-100",
+    };
+    const activeClass = colors[id];
+
+    return (
+      <a
+        href={`#${id}`}
+        className={`${
+          activeSection === id
+            ? `cursor-not-allowed border-b-2 ${activeClass} ${defaultNavLink}`
+            : `hover:text-gray-600 transition ${defaultNavLink}`
+        }`}
+      >
+        {label}
+      </a>
+    );
+  };
 
   return (
     <div className="flex flex-col lg:flex-row">
       <About />
-      <div>
-        <div className="lg:h-screen overflow-y-scroll lg:w-[60vw] scroll-smooth relative scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-900">
-          <nav className="fixed top-0 right-0 z-10 flex w-full lg:w-[45vw] gap-5 px-12 py-5 lg:my-10 uppercase rounded-l-lg select-none bg-gray-900/30 backdrop-blur-md font-murecho justify-between">
-            <div className="flex gap-5">
-              {renderNavLink("intro", "intro")}
-              {renderNavLink("projects", "projects")}
-              {renderNavLink("contact", "contact")}
-            </div>
+      <div className="lg:h-screen overflow-y-scroll lg:w-[60vw] scroll-smooth relative scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-900">
+        <nav className="fixed top-0 left-[70vw] -translate-x-1/2 z-10 flex gap-5 px-12 py-5 lg:my-10 uppercase rounded-lg select-none bg-gray-100/20 backdrop-blur-sm font-murecho justify-between">
+          <div className="flex gap-5">
+            {renderNavLink("services", t("services"))}
+            {renderNavLink("projects", t("projects"))}
+            {renderNavLink("contact", t("contact"))}
+          </div>
+        </nav>
 
-            <div className="flex gap-5 text-3xl">
-              <a href="">
-                <LinkedinLogo className="bg-[#0E76A8] rounded-md text-gray-100" />
-              </a>
-              <a href="">
-                <GithubLogo />
-              </a>
-              <a href="">
-                <WhatsappLogo className="bg-[#329431] rounded-2xl text-gray-100" />
-              </a>
-            </div>
-          </nav>
-          <section id="intro" ref={(el) => (sectionsRef.current.intro = el)}>
-            <Services />
-          </section>
-          <section
-            id="projects"
-            ref={(el) => (sectionsRef.current.projects = el)}
+        <div className="fixed z-10 flex gap-2 text-3xl bottom-10 right-20">
+          <a
+            href="https://www.linkedin.com/in/isabella-laschi/"
+            aria-label="LinkedIn"
+            target="_blank"
+            className="p-1"
           >
-            <Projects />
-          </section>
-          <section
-            id="contact"
-            ref={(el) => (sectionsRef.current.contact = el)}
+            <LinkedinLogo className="bg-[#0E76A8]/70 rounded-md text-gray-100 p-1 text-5xl transition hover:bg-[#0E76A8]" />
+          </a>
+          <a
+            href="https://github.com/laschisabella"
+            aria-label="GitHub"
+            className="p-1"
+            target="_blank"
           >
-            <Contact />
-          </section>
+            <GithubLogo className="p-1 text-5xl text-gray-100 transition rounded-md bg-gray-900/70 hover:bg-gray-900" />
+          </a>
+          <a
+            href="https://wa.me/5511985454303"
+            aria-label="WhatsApp"
+            target="_blank"
+            className="p-1"
+          >
+            <WhatsappLogo className="bg-[#329431]/70 rounded-md text-gray-100 p-1 text-5xl transition hover:bg-[#329431]" />
+          </a>
         </div>
+        <section
+          id="services"
+          ref={(el) => (sectionsRef.current.services = el)}
+        >
+          <Services />
+        </section>
+        <section
+          id="projects"
+          ref={(el) => (sectionsRef.current.projects = el)}
+        >
+          <Projects />
+        </section>
+        <section id="contact" ref={(el) => (sectionsRef.current.contact = el)}>
+          <Contact />
+        </section>
       </div>
     </div>
   );

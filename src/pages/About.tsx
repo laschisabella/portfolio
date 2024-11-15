@@ -9,6 +9,11 @@ import {
 
 import bgAbout from "/src/assets/about-bg.png";
 
+interface BulletPointProps {
+  icon: JSX.Element;
+  text: string;
+}
+
 const bulletPoints = [
   {
     icon: <SealCheck weight="fill" className="text-2xl text-purple-theme" />,
@@ -28,7 +33,7 @@ const bulletPoints = [
   },
 ];
 
-const BulletPoint = ({ icon, text }: { icon: JSX.Element; text: string }) => (
+const BulletPoint = ({ icon, text }: BulletPointProps) => (
   <div className="flex items-center gap-3 mb-2">
     {icon}
     <p>{text}</p>

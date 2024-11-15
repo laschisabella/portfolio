@@ -32,8 +32,8 @@ const ProjectCard = ({
       <ul className="flex gap-3">
         {tech.map((item, index) => (
           <li
-            className="px-3 py-1 text-xs font-bold text-gray-200 uppercase bg-gray-900 rounded-full"
             key={index}
+            className="px-3 py-1 text-xs font-bold text-gray-200 uppercase bg-gray-900 rounded-full"
           >
             {item}
           </li>
@@ -42,48 +42,61 @@ const ProjectCard = ({
       <div className="max-w-xl p-1 text-gray-900 select-text backdrop-blur-sm">
         <h1 className="pb-5 text-2xl text-center font-murecho">{title}</h1>
         <div>
-          <div className="grid grid-cols-7 gap-2">
-            <span className="col-span-2 font-bold">
-              {t("label.description")}
-            </span>
-            <span className="col-span-5">{description}</span>
-          </div>
-          <div className="grid grid-cols-7 gap-2">
-            <span className="col-span-2 font-bold">{t("label.challenge")}</span>
-            <span className="col-span-5">{challenge}</span>
-          </div>
-          <div className="grid grid-cols-7 gap-2">
-            <span className="col-span-2 font-bold">{t("label.solution")}</span>
-            <span className="col-span-5">{solution}</span>
-          </div>
+          <ProjectInfoRow label={t("label.description")} value={description} />
+          <ProjectInfoRow label={t("label.challenge")} value={challenge} />
+          <ProjectInfoRow label={t("label.solution")} value={solution} />
         </div>
       </div>
       <div className="flex items-center gap-5 uppercase select-none font-murecho">
-        <a
-          className="flex items-center gap-2 text-gray-900 transition hover:brightness-50"
-          href={repo}
-          target="_blank"
-        >
-          <CaretDoubleRight className="relative top-px" />
-          <span>{t("label.repository")}</span>
-        </a>
-        <a
-          className="flex items-center gap-2 px-5 py-3 text-xl transition rounded-xl bg-gray-100/50 hover:brightness-90"
+        {repo && (
+          <ProjectLink
+            href={repo}
+            label={t("label.repository")}
+            icon={<CaretDoubleRight className="relative top-px" />}
+          />
+        )}
+        <ProjectLink
           href={deploy}
-          target="_blank"
-        >
-          <CaretDoubleRight className="relative top-px" />
-          <span>{t("label.deploy")}</span>
-        </a>
+          label={t("label.deploy")}
+          icon={<CaretDoubleRight className="relative top-px" />}
+          extraClasses="px-5 py-3 text-xl rounded-xl bg-gray-100/50 hover:brightness-90"
+        />
       </div>
     </div>
   );
 };
 
+const ProjectInfoRow = ({ label, value }: { label: string; value: string }) => (
+  <div className="grid grid-cols-7 gap-2">
+    <span className="col-span-2 font-bold">{label}</span>
+    <span className="col-span-5">{value}</span>
+  </div>
+);
+
+const ProjectLink = ({
+  href,
+  label,
+  icon,
+  extraClasses = "",
+}: {
+  href: string;
+  label: string;
+  icon: React.ReactNode;
+  extraClasses?: string;
+}) => (
+  <a
+    href={href}
+    target="_blank"
+    className={`flex items-center gap-2 text-gray-900 transition hover:brightness-50 ${extraClasses}`}
+  >
+    {icon}
+    <span>{label}</span>
+  </a>
+);
+
 export default function Projects() {
   const [currentProject, setCurrentProject] = useState(0);
   const { t } = useTranslation("projects");
-
   const projectsData = getProjects();
 
   const handleNext = () => {
