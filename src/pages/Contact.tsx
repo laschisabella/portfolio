@@ -103,7 +103,7 @@ const ContactForm = () => {
     <form
       ref={form}
       onSubmit={sendEmail}
-      className="flex flex-col gap-3 py-5 w-[30vw]"
+      className="flex flex-col gap-3 py-5 w-full lg:w-[30vw]"
     >
       <InputField
         icon={IdentificationCard}

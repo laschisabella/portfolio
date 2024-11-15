@@ -17,7 +17,7 @@ type ServiceCardProps = {
 };
 
 const ServiceCard = ({ title, description, icon }: ServiceCardProps) => (
-  <div className="flex flex-col items-center max-w-sm p-5 glass-effect">
+  <div className="flex items-center max-w-sm p-2 text-xs lg:flex-col lg:text-base lg:p-5 glass-effect">
     <div className="mb-3">{icon}</div>
     <div>
       <h2 className="text-gray-900 font-murecho">{title}</h2>
@@ -75,10 +75,13 @@ const servicesData = [
     descriptionKey: "description4",
     icons: (
       <>
-        <Monitor weight="light" className="text-gray-600 text-8xl" />
+        <Monitor
+          weight="light"
+          className="text-5xl text-gray-600 lg:text-8xl"
+        />
         <ListHeart
           weight="bold"
-          className="absolute text-5xl top-[1.3rem] right-[2.05rem] text-purple-theme"
+          className="absolute text-3xl lg:text-5xl top-[0.48rem] lg:top-[1.3rem] right-[2.6rem] lg:right-[2.05rem] text-purple-theme"
         />
       </>
     ),
@@ -90,11 +93,11 @@ const Services = () => {
 
   return (
     <section
-      className="bg-[url('/src/assets/services-bg.png')] bg-cover h-screen bg-gray-100"
+      className="bg-[url('/src/assets/services-bg.png')] px-3 py-8 bg-cover min-h-screen lg:h-screen bg-gray-100"
       id="services"
     >
       <div className="flex flex-col items-center justify-center h-full">
-        <div className="grid grid-cols-2 gap-5 p-10 text-center">
+        <div className="grid grid-cols-1 gap-5 p-4 text-center lg:p-10">
           {servicesData.map(({ titleKey, descriptionKey, icons }, index) => (
             <ServiceCard
               key={index}
