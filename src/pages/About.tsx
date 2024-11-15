@@ -7,6 +7,8 @@ import {
   UserFocus,
 } from "@phosphor-icons/react";
 
+import bgAbout from "/src/assets/about-bg.png";
+
 const bulletPoints = [
   {
     icon: <SealCheck weight="fill" className="text-2xl text-purple-theme" />,
@@ -66,7 +68,7 @@ export default function About() {
         ))}
       </div>
       <img
-        src="/src/assets/about-bg.png"
+        src={bgAbout}
         alt="background texture"
         className="absolute -bottom-10"
       />
