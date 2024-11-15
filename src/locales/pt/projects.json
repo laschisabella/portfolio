@@ -1,10 +1,21 @@
 {
-  "title1": "INTERFACES PERSONALIZADAS",
-  "description1": "Transforme ideias em experiências digitais envolventes, com foco em aprimoramento progressivo, design systems e engenharia de interfaces.",
-  "title2": "CUSTOMIZAÇÃO DE LOJAS VIRTUAIS",
-  "description2": "Soluções inovadoras de comércio para transformar sua presença online, utilizando tecnologias confiáveis e flexíveis, como Shopify e WooCommerce",
-  "title3": "OTIMIZAÇÃO DE DESEMPENHO",
-  "description3": "Melhorias para garantir carregamento rápido e uma experiência fluida de navegação.",
-  "title4": "DESIGN RESPONSIVO",
-  "description4": "Adaptação do layout para garantir uma experiência de usuário excelente em dispositivos móveis e desktops."
+  "label": {
+    "description": "Descrição:",
+    "challenge": "Desafios:",
+    "solution": "Solução:",
+    "repository": "repositório",
+    "deploy": "confira este projeto!"
+  },
+  "project1": {
+    "title": "",
+    "description": "",
+    "challenge": "",
+    "solution": ""
+  },
+  "project2": {
+    "title": "",
+    "description": "",
+    "challenge": "",
+    "solution": ""
+  }
 }

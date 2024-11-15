@@ -90,7 +90,7 @@ const Services = () => {
 
   return (
     <section
-      className="bg-[url('/src/assets/services-bg.png')] h-screen bg-gray-100"
+      className="bg-[url('/src/assets/services-bg.png')] bg-cover h-screen bg-gray-100"
       id="intro"
     >
       <div className="flex flex-col items-center justify-center h-full">

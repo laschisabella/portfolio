@@ -1,47 +1,37 @@
-import { DefaultTFuncReturn } from "i18next";
+import testImage from "/src/assets/projects/test.png";
 
 export interface ProjectI {
-  name: DefaultTFuncReturn;
-  description: DefaultTFuncReturn;
-  urlRepository: string;
-  urlProduction: string;
+  titleKey: string;
+  descriptionKey: string;
+  challengeKey: string;
+  solutionKey: string;
+  img: string;
   tech: string[];
+  repo?: string;
+  deploy: string;
 }
 
 const getProjects = (): ProjectI[] => [
-  // {
-  //   name: t("projects.project1.name"),
-  //   description: t("projects.project1.description"),
-  //   urlRepository: "#",
-  //   urlProduction: "#",
-  //   tech: [
-  //     "https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white",
-  //     "https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white",
-  //     "https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white",
-  //   ],
-  // },
-  // {
-  //   name: t("projects.project2.name"),
-  //   description: t("projects.project2.description"),
-  //   urlRepository: "#",
-  //   urlProduction: "#",
-  //   tech: [
-  //     "https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white",
-  //     "https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white",
-  //     "https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white",
-  //   ],
-  // },
-  // {
-  //   name: t("projects.project3.name"),
-  //   description: t("projects.project3.description"),
-  //   urlRepository: "#",
-  //   urlProduction: "#",
-  //   tech: [
-  //     "https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white",
-  //     "https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white",
-  //     "https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white",
-  //   ],
-  // },
+  {
+    titleKey: "project1.title",
+    descriptionKey: "project1.description",
+    challengeKey: "project1.challenge",
+    solutionKey: "project1.solution",
+    img: testImage,
+    tech: ["Next.js", "React.js", "MongoDB"],
+    repo: "https://www.google.com/",
+    deploy: "google.com",
+  },
+  {
+    titleKey: "project2.title",
+    descriptionKey: "project2.description",
+    challengeKey: "project2.challenge",
+    solutionKey: "project2.solution",
+    img: testImage,
+    tech: ["Next.js", "React.js", "MongoDB"],
+    repo: "google.com",
+    deploy: "google.com",
+  },
 ];
 
 export default getProjects;

@@ -20,8 +20,8 @@ i18n.use(initReactI18next).init({
     pt: {
       about: ptAbout,
       services: ptServices,
-      projects: ptContact,
-      contact: ptProjects,
+      projects: ptProjects,
+      contact: ptContact,
     },
   },
   lng: "pt",

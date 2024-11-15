@@ -62,38 +62,43 @@ export default function App() {
   return (
     <div className="flex flex-col lg:flex-row">
       <About />
-      <div className="lg:h-screen overflow-y-scroll lg:w-[60vw] scroll-smooth relative">
-        <nav className="fixed top-0 right-0 z-10 flex w-[45vw] gap-5 px-12 py-5 my-10 uppercase rounded-l-lg select-none bg-gray-900/20 backdrop-blur-md font-murecho justify-between">
-          <div className="flex gap-5">
-            {renderNavLink("intro", "intro")}
-            {renderNavLink("projects", "projects")}
-            {renderNavLink("contact", "contact")}
-          </div>
+      <div>
+        <div className="lg:h-screen overflow-y-scroll lg:w-[60vw] scroll-smooth relative scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-900">
+          <nav className="fixed top-0 right-0 z-10 flex w-full lg:w-[45vw] gap-5 px-12 py-5 lg:my-10 uppercase rounded-l-lg select-none bg-gray-900/30 backdrop-blur-md font-murecho justify-between">
+            <div className="flex gap-5">
+              {renderNavLink("intro", "intro")}
+              {renderNavLink("projects", "projects")}
+              {renderNavLink("contact", "contact")}
+            </div>
 
-          <div className="flex gap-5 text-3xl">
-            <a href="">
-              <LinkedinLogo className="bg-[#0E76A8] rounded-md text-gray-100" />
-            </a>
-            <a href="">
-              <GithubLogo />
-            </a>
-            <a href="">
-              <WhatsappLogo className="bg-[#329431] rounded-2xl text-gray-100" />
-            </a>
-          </div>
-        </nav>
-        <section id="intro" ref={(el) => (sectionsRef.current.intro = el)}>
-          <Services />
-        </section>
-        <section
-          id="projects"
-          ref={(el) => (sectionsRef.current.projects = el)}
-        >
-          <Projects />
-        </section>
-        <section id="contact" ref={(el) => (sectionsRef.current.contact = el)}>
-          <Contact />
-        </section>
+            <div className="flex gap-5 text-3xl">
+              <a href="">
+                <LinkedinLogo className="bg-[#0E76A8] rounded-md text-gray-100" />
+              </a>
+              <a href="">
+                <GithubLogo />
+              </a>
+              <a href="">
+                <WhatsappLogo className="bg-[#329431] rounded-2xl text-gray-100" />
+              </a>
+            </div>
+          </nav>
+          <section id="intro" ref={(el) => (sectionsRef.current.intro = el)}>
+            <Services />
+          </section>
+          <section
+            id="projects"
+            ref={(el) => (sectionsRef.current.projects = el)}
+          >
+            <Projects />
+          </section>
+          <section
+            id="contact"
+            ref={(el) => (sectionsRef.current.contact = el)}
+          >
+            <Contact />
+          </section>
+        </div>
       </div>
     </div>
   );
