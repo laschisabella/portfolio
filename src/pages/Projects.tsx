@@ -28,7 +28,7 @@ const ProjectCard = ({
 
   return (
     <div className="flex flex-col items-center gap-5 p-5 select-none">
-      <img src={img} alt="project image" className="max-w-xl" />
+      <img src={img} alt="project image" className="max-w-xs lg:max-w-xl" />
       <ul className="flex gap-3">
         {tech.map((item, index) => (
           <li
@@ -111,13 +111,13 @@ export default function Projects() {
 
   return (
     <div
-      className="bg-[url('/src/assets/projects-bg.png')] bg-cover min-h-screen bg-[#9F84A9] px-[8%] flex justify-center items-center"
+      className="bg-[url('/src/assets/projects-bg.png')] bg-cover min-h-screen bg-[#9F84A9] lg:px-[8%] flex justify-center items-center"
       id="projects"
     >
       <div className="relative flex flex-col items-center justify-center h-full gap-5 overflow-hidden">
         <CaretDoubleLeft
           onClick={handlePrevious}
-          className="z-10 absolute top-[50%] cursor-pointer -translate-y-[50%] left-5 text-7xl transition hover:brightness-200 text-gray-900"
+          className="z-10 absolute top-0 lg:top-[50%] cursor-pointer -translate-y-[50%] left-5 text-7xl transition hover:brightness-200 text-gray-900"
         />
         <div
           className="flex transition-transform duration-500 ease-in-out"

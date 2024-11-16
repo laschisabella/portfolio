@@ -97,7 +97,7 @@ const Services = () => {
       id="services"
     >
       <div className="flex flex-col items-center justify-center h-full">
-        <div className="grid grid-cols-1 gap-5 p-4 text-center lg:p-10">
+        <div className="grid grid-cols-1 gap-5 p-4 text-center lg:grid-cols-2 lg:p-10">
           {servicesData.map(({ titleKey, descriptionKey, icons }, index) => (
             <ServiceCard
               key={index}
