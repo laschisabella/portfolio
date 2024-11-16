@@ -17,8 +17,8 @@ type ServiceCardProps = {
 };
 
 const ServiceCard = ({ title, description, icon }: ServiceCardProps) => (
-  <div className="flex items-center max-w-sm p-2 text-xs lg:flex-col lg:text-base lg:p-5 glass-effect">
-    <div className="mb-3">{icon}</div>
+  <div className="flex items-center max-w-sm p-2 text-sm text-left lg:text-center lg:flex-col lg:text-base lg:p-5 glass-effect">
+    <div className="mb-3 scale-90 lg:scale-100">{icon}</div>
     <div>
       <h2 className="text-gray-900 font-murecho">{title}</h2>
       <p className="text-gray-900 opacity-70">{description}</p>
@@ -62,11 +62,13 @@ const servicesData = [
     descriptionKey: "description3",
     icons: (
       <>
-        <Lightning weight="light" className="text-gray-600 text-8xl" />
-        <Lightning
-          weight="light"
-          className="absolute text-8xl -top-[0.2rem] -right-[0.3rem] text-yellow-theme"
-        />
+        <div className="mr-5 lg:mr-0">
+          <Lightning weight="light" className="text-gray-600 text-8xl" />
+          <Lightning
+            weight="light"
+            className="absolute text-8xl -top-[0.2rem] right-[0.3rem] lg:-right-[0.3rem] text-yellow-theme"
+          />
+        </div>
       </>
     ),
   },
@@ -75,13 +77,10 @@ const servicesData = [
     descriptionKey: "description4",
     icons: (
       <>
-        <Monitor
-          weight="light"
-          className="text-5xl text-gray-600 lg:text-8xl"
-        />
+        <Monitor weight="light" className="text-gray-600 text-8xl" />
         <ListHeart
           weight="bold"
-          className="absolute text-3xl lg:text-5xl top-[0.48rem] lg:top-[1.3rem] right-[2.6rem] lg:right-[2.05rem] text-purple-theme"
+          className="absolute text-5xl top-[1.3rem] right-[2.05rem] text-purple-theme"
         />
       </>
     ),

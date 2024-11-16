@@ -75,7 +75,7 @@ export default function App() {
     <div className="flex flex-col lg:flex-row">
       <About />
       <div className="lg:h-screen overflow-y-scroll lg:w-[60vw] scroll-smooth relative scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-900">
-        <nav className="hidden fixed top-5 lg:top-0 left-1/2 lg:left-[70vw] -translate-x-1/2 z-10 lg:flex gap-5 px-5 py-2 lg:px-12 lg:py-5 lg:my-10 uppercase rounded-lg select-none bg-gray-100/20 backdrop-blur-sm font-murecho justify-between">
+        <nav className="hidden fixed top-5 lg:top-0 left-1/2 lg:left-[70vw] -translate-x-1/2 z-10 lg:flex gap-5 px-8 py-2 lg:my-10 uppercase rounded-lg select-none bg-gray-100/10 backdrop-blur-md font-murecho justify-between">
           <div className="flex gap-5">
             {renderNavLink("services", t("services"))}
             {renderNavLink("projects", t("projects"))}

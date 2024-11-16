@@ -27,7 +27,7 @@ const ProjectCard = ({
   const { t } = useTranslation("projects");
 
   return (
-    <div className="flex flex-col items-center gap-5 p-5 select-none">
+    <div className="flex flex-col items-center gap-5 p-20 select-none lg:p-5">
       <img src={img} alt="project image" className="max-w-xs lg:max-w-xl" />
       <ul className="flex gap-3">
         {tech.map((item, index) => (
@@ -47,7 +47,7 @@ const ProjectCard = ({
           <ProjectInfoRow label={t("label.solution")} value={solution} />
         </div>
       </div>
-      <div className="flex items-center gap-5 uppercase select-none font-murecho">
+      <div className="relative flex flex-col-reverse items-center gap-2 uppercase select-none lg:gap-5 lg:flex-row font-murecho top-10 lg:top-0">
         {repo && (
           <ProjectLink
             href={repo}
@@ -117,7 +117,7 @@ export default function Projects() {
       <div className="relative flex flex-col items-center justify-center h-full gap-5 overflow-hidden">
         <CaretDoubleLeft
           onClick={handlePrevious}
-          className="z-10 absolute top-0 lg:top-[50%] cursor-pointer -translate-y-[50%] left-5 text-7xl transition hover:brightness-200 text-gray-900"
+          className="z-10 absolute top-10 lg:top-[50%] cursor-pointer -translate-y-[50%] left-5 text-7xl transition hover:brightness-200 text-gray-900"
         />
         <div
           className="flex transition-transform duration-500 ease-in-out"
@@ -142,7 +142,7 @@ export default function Projects() {
         </div>
         <CaretDoubleRight
           onClick={handleNext}
-          className="z-10 absolute top-[50%] cursor-pointer -translate-y-[50%] right-5 text-7xl transition hover:brightness-200 text-gray-900"
+          className="z-10 absolute top-10 lg:top-[50%] cursor-pointer -translate-y-[50%] right-5 text-7xl transition hover:brightness-200 text-gray-900"
         />
       </div>
     </div>
