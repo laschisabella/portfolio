@@ -17,7 +17,7 @@ type ServiceCardProps = {
 };
 
 const ServiceCard = ({ title, description, icon }: ServiceCardProps) => (
-  <div className="flex items-center max-w-sm p-2 text-sm text-left lg:text-center lg:flex-col lg:text-base lg:p-5 glass-effect">
+  <div className="flex items-center max-w-sm p-2 text-sm text-left rounded-lg lg:text-center lg:flex-col lg:text-base lg:p-5 backdrop-blur-sm bg-gray-600/10">
     <div className="mb-3 scale-90 lg:scale-100">{icon}</div>
     <div>
       <h2 className="text-gray-900 font-murecho">{title}</h2>
@@ -95,7 +95,12 @@ const Services = () => {
       className="bg-[url('/src/assets/services-bg.png')] px-3 py-8 bg-cover min-h-screen lg:h-screen bg-gray-100"
       id="services"
     >
-      <div className="flex flex-col items-center justify-center h-full">
+      <div className="flex items-center justify-center h-full max-w-screen-xl mx-auto">
+        <div className="max-w-lg">
+          <h1 className="text-5xl font-murecho text-purple-theme">
+            {t("title")}
+          </h1>
+        </div>
         <div className="grid grid-cols-1 gap-5 p-4 text-center lg:grid-cols-2 lg:p-10">
           {servicesData.map(({ titleKey, descriptionKey, icons }, index) => (
             <ServiceCard

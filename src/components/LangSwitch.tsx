@@ -21,7 +21,7 @@ export default function LangSwitch() {
   };
 
   return (
-    <div className="flex items-center gap-2 text-sm font-bold text-gray-100">
+    <div className="flex items-center gap-2 text-sm font-bold text-gray-100 scale-90">
       <span>EN</span>
       <Switch size="lg" isChecked={checked} onChange={handleChange} />
       <span>PT</span>

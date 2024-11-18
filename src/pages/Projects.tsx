@@ -27,7 +27,7 @@ const ProjectCard = ({
   const { t } = useTranslation("projects");
 
   return (
-    <div className="flex flex-col items-center gap-5 p-20 select-none lg:p-5">
+    <div className="flex flex-col items-center gap-5 p-20 select-none">
       <img src={img} alt="project image" className="max-w-xs lg:max-w-xl" />
       <ul className="flex gap-3">
         {tech.map((item, index) => (

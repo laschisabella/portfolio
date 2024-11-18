@@ -1,24 +1,27 @@
 import { useEffect, useState, useRef, useCallback } from "react";
 import { useTranslation } from "react-i18next";
+import { List } from "@phosphor-icons/react";
+import { About, Contact, Projects, Services } from "./pages";
+import { LangSwitch, SocialLinks } from "./components";
 
-import About from "./pages/About";
-import Services from "./pages/Services";
-import Contact from "./pages/Contact";
-import Projects from "./pages/Projects";
-import { LinkedinLogo, GithubLogo, WhatsappLogo } from "@phosphor-icons/react";
-
-type SectionId = "services" | "projects" | "contact";
+type SectionId = "about" | "services" | "projects" | "contact";
 type SectionRefs = { [key in SectionId]: HTMLElement | null };
+
+const sectionIds: SectionId[] = ["about", "services", "projects", "contact"];
 
 export default function App() {
   const { i18n, t } = useTranslation("common");
   const [activeSection, setActiveSection] = useState<SectionId>("services");
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const sectionsRef = useRef<SectionRefs>({
+    about: null,
     services: null,
     projects: null,
     contact: null,
   });
+
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     i18n.changeLanguage(navigator.language);
@@ -47,23 +50,35 @@ export default function App() {
     return () => observer.disconnect();
   }, [handleIntersection]);
 
-  const defaultNavLink = "px-1 py-px";
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const defaultNavLink = "md:px-1 md:py-px py-5 px-5 inline-block w-full";
 
   const renderNavLink = (id: SectionId, label: string) => {
-    const colors: Record<SectionId, string> = {
-      services: "text-purple-theme border-purple-theme",
-      projects: "text-gray-100 border-gray-100",
-      contact: "text-gray-100 border-gray-100",
-    };
-    const activeClass = colors[id];
+    const activeClass = "text-purple-theme md:border-purple-theme";
+    const inactiveClass =
+      "text-gray-200 border-b-2 border-zinc-700 md:border-none hover:text-gray-600 transition";
 
     return (
       <a
         href={`#${id}`}
+        onClick={() => setIsDropdownOpen(false)}
         className={`${
           activeSection === id
-            ? `cursor-not-allowed border-b-2 ${activeClass} ${defaultNavLink}`
-            : `hover:text-gray-600 transition ${defaultNavLink}`
+            ? `cursor-not-allowed border-b-2 border-zinc-700 ${activeClass} ${defaultNavLink}`
+            : `${inactiveClass} ${defaultNavLink}`
         }`}
       >
         {label}
@@ -72,59 +87,45 @@ export default function App() {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row">
-      <About />
-      <div className="lg:h-screen overflow-y-scroll lg:w-[60vw] scroll-smooth relative scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-900">
-        <nav className="hidden fixed top-5 lg:top-0 left-1/2 lg:left-[70vw] -translate-x-1/2 z-10 lg:flex gap-5 px-8 py-2 lg:my-10 uppercase rounded-lg select-none bg-gray-100/10 backdrop-blur-md font-murecho justify-between">
-          <div className="flex gap-5">
-            {renderNavLink("services", t("services"))}
-            {renderNavLink("projects", t("projects"))}
-            {renderNavLink("contact", t("contact"))}
-          </div>
-        </nav>
+    <div className="relative flex flex-col scroll-smooth">
+      <nav className="fixed top-0 z-10 w-full p-5 uppercase bg-gray-900 select-none font-murecho">
+        <div className="flex items-center justify-between max-w-screen-lg gap-5 mx-auto">
+          <SocialLinks />
 
-        <div className="fixed z-10 hidden gap-2 text-3xl translate-x-1/2 lg:flex lg:translate-x-0 right-1/2 bottom-5 lg:bottom-10 lg:right-20">
-          <a
-            href="https://www.linkedin.com/in/isabella-laschi/"
-            aria-label="LinkedIn"
-            target="_blank"
-            className="p-1"
-          >
-            <LinkedinLogo className="bg-[#0E76A8]/70 rounded-md text-gray-100 p-1 text-5xl transition hover:bg-[#0E76A8]" />
-          </a>
-          <a
-            href="https://github.com/laschisabella"
-            aria-label="GitHub"
-            className="p-1"
-            target="_blank"
-          >
-            <GithubLogo className="p-1 text-5xl text-gray-100 transition rounded-md bg-gray-900/70 hover:bg-gray-900" />
-          </a>
-          <a
-            href="https://wa.me/5511985454303"
-            aria-label="WhatsApp"
-            target="_blank"
-            className="p-1"
-          >
-            <WhatsappLogo className="bg-[#329431]/70 rounded-md text-gray-100 p-1 text-5xl transition hover:bg-[#329431]" />
-          </a>
+          <div className="hidden gap-5 md:flex">
+            {sectionIds.map((id) => renderNavLink(id, t(id)))}
+          </div>
+
+          <div className="relative md:hidden" ref={dropdownRef}>
+            <button
+              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+              className="text-gray-200 transition hover:text-gray-600"
+            >
+              <List className="text-5xl" />
+            </button>
+            {isDropdownOpen && (
+              <div className="absolute left-0 z-20 w-[90vw] mt-2 bg-zinc-800 rounded shadow-lg">
+                <ul className="flex flex-col">
+                  {sectionIds.map((id) => (
+                    <li key={id}>{renderNavLink(id, t(id))}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+
+          <LangSwitch />
         </div>
-        <section
-          id="services"
-          ref={(el) => (sectionsRef.current.services = el)}
-        >
-          <Services />
+      </nav>
+
+      {sectionIds.map((id) => (
+        <section key={id} id={id} ref={(el) => (sectionsRef.current[id] = el)}>
+          {id === "about" && <About />}
+          {id === "services" && <Services />}
+          {id === "projects" && <Projects />}
+          {id === "contact" && <Contact />}
         </section>
-        <section
-          id="projects"
-          ref={(el) => (sectionsRef.current.projects = el)}
-        >
-          <Projects />
-        </section>
-        <section id="contact" ref={(el) => (sectionsRef.current.contact = el)}>
-          <Contact />
-        </section>
-      </div>
+      ))}
     </div>
   );
 }

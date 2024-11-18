@@ -1,5 +1,6 @@
 {
   "services": "services",
   "projects": "projects",
-  "contact": "contact"
+  "contact": "contact",
+  "about": "profile"
 }

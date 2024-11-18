@@ -1,7 +1,12 @@
 {
-  "intro": "Desenvolvedora especializada em JavaScript, com ampla experiência em ambientes ágeis. Focada na entrega de soluções personalizadas que aprimoram a experiência do usuário e aumentam a eficiência operacional, além de otimizar a performance e a usabilidade dos produtos. Experiência comprovada em projetos internacionais.",
+  "title": "Soluções digitais",
+  "title2": "focadas em performance",
+  "title3": "e usabilidade.",
+  "subtitle": "Desenvolver é mais do que escrever código; é criar experiências que conectam pessoas e produtos.",
   "bullet1": "4+ anos de experiência",
-  "bullet2": "Styled Components, Next.js, TypeScript e muito mais",
+  "bullet2": "React.js, Next.js, TypeScript, Tailwind e muito mais",
   "bullet3": "Desenvolvimento centrado na experiência do usuário",
-  "bullet4": "São Paulo, Brasil"
+  "bullet4": "Experiência comprovada em projetos internacionais",
+  "bullet5": "São Paulo, Brasil",
+  "resume": "download currículo"
 }

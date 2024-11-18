@@ -13,9 +13,9 @@
     "solution": ""
   },
   "project2": {
-    "title": "",
-    "description": "",
-    "challenge": "",
-    "solution": ""
+    "title": "Laschisa Financial",
+    "description": "Laschisa Financial is a project developed in React with TypeScript, styled using Styled-Components, and bundled with Vite. The main goal was to simulate financial operations, manage transactions, and create a user-friendly, responsive interface. During development, libraries such as Axios and MirageJS were integrated, enabling efficient testing with mock data and handling asynchronous communication.",
+    "challenge": "One of the main challenges was efficiently managing component state in the context of financial operations, ensuring that transactions were rendered correctly and that the interface remained responsive. Additionally, learning to use MirageJS for API simulation and working with static typing in TypeScript presented a learning curve.",
+    "solution": "The challenges were addressed by implementing best practices in clean code and modularity, along with a well-organized structure for components and state. The use of MirageJS enabled API simulations and testing with mock data, while Vite ensured fast and optimized builds. Introducing TypeScript allowed for better error prevention, providing greater code security and predictability."
   }
 }

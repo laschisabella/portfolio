@@ -7,15 +7,15 @@
     "deploy": "confira este projeto!"
   },
   "project1": {
-    "title": "",
+    "title": "laschisa coffee shop",
     "description": "",
     "challenge": "",
     "solution": ""
   },
   "project2": {
-    "title": "",
-    "description": "",
-    "challenge": "",
-    "solution": ""
+    "title": "Laschisa Financial",
+    "description": "App para simular operações financeiras, gerenciar transações e criar uma interface amigável e responsiva!",
+    "challenge": "Um dos principais desafios foi gerenciar o estado dos componentes de forma eficiente em um contexto de operações financeiras, garantindo que as transações fossem renderizadas corretamente e que a interface fosse responsiva. Além disso, aprender a usar o MirageJS para simular APIs e lidar com tipagem estática no TypeScript trouxe uma curva de aprendizado.",
+    "solution": "Os desafios foram solucionados implementando boas práticas de código limpo e modularidade, além de uma estrutura bem organizada para componentes e estados. O uso do MirageJS possibilitou simular APIs e realizar testes com dados fictícios, enquanto o Vite assegurou builds rápidos e otimizados. A introdução de TypeScript permitiu prever e evitar erros, garantindo maior segurança e previsibilidade no código."
   }
 }
