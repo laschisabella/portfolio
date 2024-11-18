@@ -61,7 +61,7 @@ export default function About() {
 
   return (
     <div className="relative flex justify-center min-h-screen p-10 overflow-hidden bg-gray-900 lg:items-center lg:p-20">
-      <div className="flex items-center max-w-screen-xl gap-20">
+      <div className="flex items-center gap-20 max-w-screen-2xl">
         <div className="flex flex-col items-center my-3 scale-125 lg:my-10">
           <div className="relative select-none">
             <img
@@ -75,8 +75,10 @@ export default function About() {
               className="absolute rounded-full w-80 lg:w-[9.5rem] shadow-custom left-14 lg:left-[4.2rem] top-7"
             />
           </div>
-          <span className="mt-3 text-5xl text-gray-100 ">Isabella Laschi</span>
-          <span className="text-xl font-major text-purple-theme">
+          <span className="mt-3 text-5xl text-gray-100 font-murecho">
+            Isabella Laschi
+          </span>
+          <span className="text-xl font-murecho text-purple-theme">
             desenvolvimento web & ux
           </span>
         </div>
