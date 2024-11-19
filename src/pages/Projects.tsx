@@ -27,49 +27,51 @@ const ProjectCard = ({
   const { t } = useTranslation("projects");
 
   return (
-    <div className="flex flex-col items-center gap-5 p-20 select-none">
-      <img src={img} alt="project image" className="max-w-xs lg:max-w-xl" />
-      <ul className="flex gap-3">
-        {tech.map((item, index) => (
-          <li
-            key={index}
-            className="px-3 py-1 text-xs font-bold text-gray-200 uppercase bg-gray-900 rounded-full"
-          >
-            {item}
-          </li>
-        ))}
-      </ul>
-      <div className="max-w-xl p-1 text-gray-900 select-text backdrop-blur-sm">
+    <div className="flex flex-col items-center justify-between w-full gap-5 p-5 select-none md:flex-row">
+      <div className="flex flex-col items-center p-5">
+        <img src={img} alt="project image" className="w-96 lg:w-full" />
+        <ul className="flex flex-wrap justify-center gap-3">
+          {tech.map((item, index) => (
+            <li
+              key={index}
+              className="px-3 py-1 text-xs font-bold text-gray-200 uppercase bg-gray-900 rounded-full"
+            >
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div className="max-w-xs p-10 mr-20 text-gray-900 select-text lg:max-w-screen-sm backdrop-blur-sm bg-gray-200/20">
         <h1 className="pb-5 text-2xl text-center font-murecho">{title}</h1>
         <div>
           <ProjectInfoRow label={t("label.description")} value={description} />
           <ProjectInfoRow label={t("label.challenge")} value={challenge} />
           <ProjectInfoRow label={t("label.solution")} value={solution} />
         </div>
-      </div>
-      <div className="relative flex flex-col-reverse items-center gap-2 uppercase select-none lg:gap-5 lg:flex-row font-murecho top-10 lg:top-0">
-        {repo && (
+        <div className="relative flex flex-col-reverse items-center gap-2 uppercase select-none lg:gap-5 lg:flex-row font-murecho top-10 lg:top-0">
+          {repo && (
+            <ProjectLink
+              href={repo}
+              label={t("label.repository")}
+              icon={<CaretDoubleRight className="relative top-px" />}
+            />
+          )}
           <ProjectLink
-            href={repo}
-            label={t("label.repository")}
+            href={deploy}
+            label={t("label.deploy")}
             icon={<CaretDoubleRight className="relative top-px" />}
+            extraClasses="px-5 py-3 text-xl rounded-xl bg-gray-100/50 hover:brightness-90"
           />
-        )}
-        <ProjectLink
-          href={deploy}
-          label={t("label.deploy")}
-          icon={<CaretDoubleRight className="relative top-px" />}
-          extraClasses="px-5 py-3 text-xl rounded-xl bg-gray-100/50 hover:brightness-90"
-        />
+        </div>
       </div>
     </div>
   );
 };
 
 const ProjectInfoRow = ({ label, value }: { label: string; value: string }) => (
-  <div className="grid grid-cols-7 gap-2">
-    <span className="col-span-2 font-bold">{label}</span>
-    <span className="col-span-5">{value}</span>
+  <div className="gap-2 ">
+    <span className="font-bold ">{label}</span>
+    <span className="">{value}</span>
   </div>
 );
 
@@ -111,13 +113,18 @@ export default function Projects() {
 
   return (
     <div
-      className="bg-[url('/src/assets/projects-bg.png')] bg-cover min-h-screen bg-[#9F84A9] lg:px-[8%] flex justify-center items-center"
+      className="bg-[url('/src/assets/projects-bg.png')] bg-cover min-h-screen bg-[#9F84A9] flex flex-col justify-center items-center"
       id="projects"
     >
-      <div className="relative flex flex-col items-center justify-center h-full gap-5 overflow-hidden">
+      <div className="mt-32">
+        <h1 className="text-4xl text-center lg:text-6xl font-major">
+          {t("title")}
+        </h1>
+      </div>
+      <div className="relative flex flex-col items-center justify-center h-full gap-5 overflow-hidden w-80 lg:w-min">
         <CaretDoubleLeft
           onClick={handlePrevious}
-          className="z-10 absolute top-10 lg:top-[50%] cursor-pointer -translate-y-[50%] left-5 text-7xl transition hover:brightness-200 text-gray-900"
+          className="z-10 absolute top-[12%] lg:top-[50%] cursor-pointer -translate-y-[50%] left-5 text-7xl transition hover:brightness-200 text-yellow-theme brightness-125"
         />
         <div
           className="flex transition-transform duration-500 ease-in-out"
@@ -142,7 +149,7 @@ export default function Projects() {
         </div>
         <CaretDoubleRight
           onClick={handleNext}
-          className="z-10 absolute top-10 lg:top-[50%] cursor-pointer -translate-y-[50%] right-5 text-7xl transition hover:brightness-200 text-gray-900"
+          className="z-10 absolute top-[12%] lg:top-[50%] cursor-pointer -translate-y-[50%] right-5 text-7xl transition hover:brightness-200 text-yellow-theme brightness-125"
         />
       </div>
     </div>

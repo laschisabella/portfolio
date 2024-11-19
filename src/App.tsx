@@ -88,7 +88,7 @@ export default function App() {
 
   return (
     <div className="relative flex flex-col scroll-smooth">
-      <nav className="fixed top-0 z-10 w-full p-5 uppercase bg-gray-900 select-none font-murecho">
+      <nav className="fixed top-0 z-20 w-full p-5 uppercase bg-gray-900 select-none font-murecho">
         <div className="flex items-center justify-between max-w-screen-lg gap-5 mx-auto">
           <SocialLinks />
 
