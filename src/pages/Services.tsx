@@ -95,9 +95,9 @@ const Services = () => {
       className="bg-[url('/src/assets/services-bg.png')] px-3 py-8 bg-cover min-h-screen lg:h-screen bg-gray-100"
       id="services"
     >
-      <div className="flex items-center justify-center h-full max-w-screen-xl mx-auto">
+      <div className="flex flex-col items-center justify-center h-full max-w-screen-xl mx-auto lg:flex-row">
         <div className="max-w-lg">
-          <h1 className="text-5xl font-murecho text-purple-theme">
+          <h1 className="text-2xl text-center md:text-left md:text-5xl font-murecho text-purple-theme">
             {t("title")}
           </h1>
         </div>

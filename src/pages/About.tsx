@@ -61,21 +61,21 @@ export default function About() {
 
   return (
     <div className="relative flex justify-center min-h-screen p-10 overflow-hidden bg-gray-900 lg:items-center lg:p-20">
-      <div className="flex items-center gap-20 max-w-screen-2xl">
-        <div className="flex flex-col items-center my-3 scale-125 lg:my-10">
-          <div className="relative select-none">
+      <div className="flex flex-col items-center gap-5 md:gap-20 lg:flex-row max-w-screen-2xl">
+        <div className="flex flex-col items-center justify-center my-3 text-center scale-125 lg:my-10">
+          <div className="relative mt-16 select-none">
             <img
               src="/logo.png"
               alt="Isabella Laschi logo"
-              className="w-52 lg:w-72 opacity-20"
+              className="w-52 md:w-72 opacity-20"
             />
             <img
               src="https://github.com/laschisabella.png"
               alt="Isabella Laschi"
-              className="absolute rounded-full w-80 lg:w-[9.5rem] shadow-custom left-14 lg:left-[4.2rem] top-7"
+              className="absolute rounded-full w-24 md:w-[9.5rem] shadow-custom left-14 lg:left-[4.2rem] top-7"
             />
           </div>
-          <span className="mt-3 text-5xl text-gray-100 font-murecho">
+          <span className="mt-3 text-2xl text-gray-100 md:text-5xl font-murecho">
             Isabella Laschi
           </span>
           <span className="text-xl font-murecho text-purple-theme">
@@ -83,7 +83,7 @@ export default function About() {
           </span>
         </div>
         <div className="max-w-xl">
-          <h1 className="text-xl lg:text-[2.5rem] leading-snug font-major text-yellow-theme">
+          <h1 className="text-xl mt-10 lg:text-[2.5rem] leading-snug font-major text-yellow-theme">
             {t("title")}
           </h1>
           <h1 className="text-xl lg:text-[2.5rem] leading-snug font-major text-yellow-theme text-balance">
@@ -92,7 +92,7 @@ export default function About() {
           <h1 className="text-xl lg:text-[2.5rem] leading-snug font-major text-yellow-theme text-balance">
             {t("title3")}
           </h1>
-          <p className="py-5 text-xl text-gray-200 font-murecho">
+          <p className="py-5 text-base text-gray-200 md:text-xl font-murecho">
             {t("subtitle")}
           </p>
           <div className="flex flex-col mt-5 text-gray-200">
