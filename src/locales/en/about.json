@@ -1,7 +1,13 @@
 {
-  "intro": "Developer specialized in JavaScript, with extensive experience in agile environments. Focused on delivering customized solutions that enhance user experience and increase operational efficiency, while optimizing product performance and usability. Proven experience in international projects.",
-  "bullet1": "4+ years of experience",
-  "bullet2": "Styled Components, Next.js, TypeScript, and much more",
-  "bullet3": "User experience-centered development",
-  "bullet4": "Sao Paulo, Brazil"
+  "logo": "Web Development & UX",
+  "title": "Digital solutions",
+  "title2": "focused on performance",
+  "title3": "and usability.",
+  "subtitle": "Developing is more than writing code; it's about creating experiences that connect people and products.",
+  "bullet1": "4+ years of experience.",
+  "bullet2": "React.js, Next.js, TypeScript, Tailwind, and more.",
+  "bullet3": "User experience-centered development.",
+  "bullet4": "Proven experience in international projects.",
+  "bullet5": "São Paulo, Brazil.",
+  "resume": "download resume"
 }

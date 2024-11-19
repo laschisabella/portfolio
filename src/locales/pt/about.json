@@ -1,12 +1,13 @@
 {
+  "logo": "Desenvolvimento Web & UX",
   "title": "Soluções digitais",
   "title2": "focadas em performance",
   "title3": "e usabilidade.",
   "subtitle": "Desenvolver é mais do que escrever código; é criar experiências que conectam pessoas e produtos.",
-  "bullet1": "4+ anos de experiência",
-  "bullet2": "React.js, Next.js, TypeScript, Tailwind e muito mais",
-  "bullet3": "Desenvolvimento centrado na experiência do usuário",
-  "bullet4": "Experiência comprovada em projetos internacionais",
-  "bullet5": "São Paulo, Brasil",
+  "bullet1": "4+ anos de experiência.",
+  "bullet2": "React.js, Next.js, TypeScript, Tailwind e muito mais.",
+  "bullet3": "Desenvolvimento centrado na experiência do usuário.",
+  "bullet4": "Experiência comprovada em projetos internacionais.",
+  "bullet5": "São Paulo, Brasil.",
   "resume": "download currículo"
 }

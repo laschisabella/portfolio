@@ -97,7 +97,7 @@ const Services = () => {
     >
       <div className="flex flex-col items-center justify-center h-full max-w-screen-xl mx-auto lg:flex-row">
         <div className="max-w-lg">
-          <h1 className="text-2xl text-center md:text-left md:text-5xl font-murecho text-purple-theme">
+          <h1 className="mt-24 mb-10 text-2xl text-center md:text-left md:text-5xl font-murecho text-purple-theme text-balance">
             {t("title")}
           </h1>
         </div>
