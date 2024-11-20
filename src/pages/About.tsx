@@ -61,8 +61,8 @@ export default function About() {
 
   return (
     <div className="relative flex justify-center min-h-screen p-10 overflow-hidden bg-gray-900 lg:items-center lg:p-20">
-      <div className="flex flex-col items-center gap-5 md:gap-20 lg:flex-row max-w-screen-2xl">
-        <div className="flex flex-col items-center justify-center my-3 text-center scale-125 lg:my-10">
+      <div className="flex flex-col items-center gap-5 md:gap-32 lg:flex-row max-w-screen-2xl">
+        <div className="flex flex-col items-center justify-center my-3 text-center scale-125 lg:mb-[25%]">
           <div className="relative mt-16 select-none">
             <img
               src="/logo.png"
