@@ -177,7 +177,7 @@ export default function Contact() {
         </div>
         <div className="flex flex-col items-center">
           <p className="text-lg font-murecho">{t("social")}</p>
-          <div className="flex text-[2.2rem] lg:text-[2.5rem] lg:gap-3 pb-10 pt-3">
+          <div className="flex flex-col lg:flex-row text-[2.2rem] lg:text-[2.5rem] lg:gap-3 pb-10 pt-3">
             <a
               href="https://www.linkedin.com/in/isabella-laschi/"
               aria-label="LinkedIn"
@@ -188,7 +188,7 @@ export default function Contact() {
               <p className="text-lg font-bold">Linkedin</p>
             </a>
             <a
-              href="https://www.linkedin.com/in/isabella-laschi/"
+              href="https://github.com/laschisabella"
               aria-label="LinkedIn"
               target="_blank"
               className="bg-[#171515] flex rounded-lg items-center px-2 py-1 gap-1 text-gray-100 hover:brightness-110 transition"
@@ -197,7 +197,7 @@ export default function Contact() {
               <p className="text-lg font-bold">Github</p>
             </a>
             <a
-              href="https://www.linkedin.com/in/isabella-laschi/"
+              href="https://wa.me/5511985454303"
               aria-label="LinkedIn"
               target="_blank"
               className="bg-[#329431] flex rounded-lg items-center px-2 py-1 gap-1 text-gray-100 hover:brightness-110 transition"

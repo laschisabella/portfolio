@@ -8,8 +8,6 @@ import {
   UserFocus,
 } from "@phosphor-icons/react";
 
-import bgAbout from "/src/assets/about-bg.png";
-
 interface BulletPointProps {
   icon: JSX.Element;
   text: string;
