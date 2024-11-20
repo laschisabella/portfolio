@@ -3,7 +3,11 @@ import i18next from "i18next";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-export default function LangSwitch() {
+type LangSwitchProps = {
+  setCvPt: (valor: boolean) => void;
+};
+
+export default function LangSwitch({ setCvPt }: LangSwitchProps) {
   const { i18n } = useTranslation();
 
   const [checked, setChecked] = useState(
@@ -15,8 +19,10 @@ export default function LangSwitch() {
 
     if (i18next.language.includes("pt")) {
       i18n.changeLanguage("en-US");
+      setCvPt(false);
     } else if (!i18next.language.includes("pt")) {
       i18n.changeLanguage("pt-BR");
+      setCvPt(true);
     }
   };
 

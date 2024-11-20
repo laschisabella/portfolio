@@ -17,8 +17,8 @@ type ServiceCardProps = {
 };
 
 const ServiceCard = ({ title, description, icon }: ServiceCardProps) => (
-  <div className="flex items-center max-w-sm p-2 text-sm text-left rounded-lg lg:text-center lg:flex-col lg:text-base lg:p-5 backdrop-blur-sm bg-gray-600/10">
-    <div className="mb-3 scale-90 lg:scale-100">{icon}</div>
+  <div className="flex items-center max-w-sm gap-2 p-2 text-sm text-left rounded-lg lg:text-center lg:flex-col lg:text-base lg:p-5 backdrop-blur-sm bg-gray-600/10">
+    <div className="mb-3">{icon}</div>
     <div>
       <h2 className="text-gray-900 font-murecho">{title}</h2>
       <p className="text-gray-900 opacity-70">{description}</p>
@@ -92,12 +92,12 @@ const Services = () => {
 
   return (
     <section
-      className="bg-[url('/src/assets/services-bg.png')] px-3 py-8 bg-cover min-h-screen lg:h-screen bg-gray-100"
+      className="bg-[url('/src/assets/services-bg.png')] px-3 py-8 bg-cover bg-gray-100"
       id="services"
     >
       <div className="flex flex-col items-center justify-center h-full max-w-screen-xl mx-auto lg:flex-row">
         <div className="max-w-lg">
-          <h1 className="mt-24 mb-10 text-2xl text-center md:text-left md:text-5xl font-murecho text-purple-theme text-balance">
+          <h1 className="mt-24 mb-10 text-2xl text-center lg:text-left md:text-3xl lg:text-5xl font-murecho text-purple-theme text-balance">
             {t("title")}
           </h1>
         </div>

@@ -13,6 +13,9 @@ export default function App() {
   const { i18n, t } = useTranslation("common");
   const [activeSection, setActiveSection] = useState<SectionId>("services");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [cvPt, setCvPt] = useState(
+    navigator.language.includes("pt") ? true : false
+  );
 
   const sectionsRef = useRef<SectionRefs>({
     about: null,
@@ -113,14 +116,18 @@ export default function App() {
               </div>
             )}
           </div>
-
-          <LangSwitch />
+          <LangSwitch setCvPt={setCvPt} />
         </div>
       </nav>
 
       {sectionIds.map((id) => (
-        <section key={id} id={id} ref={(el) => (sectionsRef.current[id] = el)}>
-          {id === "about" && <About />}
+        <section
+          key={id}
+          id={id}
+          ref={(el) => (sectionsRef.current[id] = el)}
+          className="scroll-mt-16"
+        >
+          {id === "about" && <About cvPt={cvPt} />}
           {id === "services" && <Services />}
           {id === "projects" && <Projects />}
           {id === "contact" && <Contact />}

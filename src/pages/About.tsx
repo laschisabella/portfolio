@@ -45,64 +45,48 @@ const BulletPoint = ({ icon, text }: BulletPointProps) => (
   </div>
 );
 
-export default function About() {
+export default function About({ cvPt }: { cvPt: boolean }) {
   const { t } = useTranslation("about");
-  const { i18n } = useTranslation("common");
-
-  const getResumeLink = () => {
-    const language = i18n.language;
-    if (language === "en") {
-      return "/path/to/your/curriculum_en.pdf"; // Caminho para o currículo em inglês
-    } else if (language === "pt") {
-      return "/path/to/your/curriculum_pt.pdf"; // Caminho para o currículo em português
-    }
-    return "/path/to/your/curriculum.pdf"; // Caminho padrão para outros idiomas
-  };
 
   return (
-    <div className="relative flex justify-center min-h-screen p-10 overflow-hidden bg-gray-900 lg:items-center lg:p-20">
-      <div className="flex flex-col items-center gap-5 md:gap-32 lg:flex-row max-w-screen-2xl">
-        <div className="flex flex-col items-center justify-center my-3 text-center scale-125 lg:mb-[25%]">
-          <div className="relative mt-16 select-none">
-            <img
-              src="/logo.png"
-              alt="Isabella Laschi logo"
-              className="w-52 md:w-72 opacity-20"
-            />
-            <img
-              src="https://github.com/laschisabella.png"
-              alt="Isabella Laschi"
-              className="absolute rounded-full w-24 md:w-[9.5rem] shadow-custom left-14 lg:left-[4.2rem] top-7"
-            />
-          </div>
+    <div className="relative flex justify-center min-h-screen p-5 overflow-hidden bg-gray-900 lg:items-center lg:p-20">
+      <div className="flex flex-col items-center gap-5 lg:flex-row max-w-screen-2xl">
+        <div className="flex flex-col items-center justify-center scale-125 md:scale-90 lg:scale-100 mt-32 lg:mt-0 my-3 text-center lg:mb-[15%]">
+          <img
+            src="https://github.com/laschisabella.png"
+            alt="Isabella Laschi"
+            className="rounded-full w-24 md:w-[50%] shadow-custom"
+          />
           <span className="mt-3 text-2xl text-gray-100 md:text-5xl font-murecho">
             Isabella Laschi
           </span>
-          <span className="text-xl font-murecho text-purple-theme">
+          <span className="text-xl md:my-3 font-murecho text-purple-theme">
             {t("logo")}
           </span>
         </div>
         <div className="max-w-2xl">
-          <h1 className="text-xl mt-10 md:mt-2 md:text-[2.5rem] leading-snug font-major text-yellow-theme">
+          <h1 className="text-2xl text-center lg:text-left mt-2 md:text-[2.5rem] leading-snug font-major text-yellow-theme">
             {t("title")}
           </h1>
-          <h1 className="text-xl md:text-[2.5rem] leading-snug font-major text-zinc-400 text-balance">
-            {t("title2")}
-          </h1>
-          <h1 className="text-xl md:text-[2.5rem] leading-snug font-major text-zinc-200 text-balance">
-            {t("title3")}
-          </h1>
-          <p className="py-5 text-base text-gray-200 md:text-xl font-murecho">
+          <p className="max-w-md py-5 mx-auto text-base text-gray-200 md:text-xl lg:max-w-2xl font-murecho">
             {t("subtitle")}
           </p>
-          <div className="flex flex-col mt-5 text-gray-200">
+          <div className="flex flex-col max-w-md mx-auto mt-5 text-gray-200 lg:max-w-2xl">
             {bulletPoints.map(({ icon, textKey }) => (
               <BulletPoint key={textKey} icon={icon} text={t(textKey)} />
             ))}
           </div>
-          <div className="flex items-center gap-2 my-5 text-lg uppercase font-murecho text-yellow-theme">
+          <div className="flex items-center justify-center gap-2 my-5 text-lg uppercase lg:justify-start font-murecho text-yellow-theme">
             <CaretDoubleRight />
-            <a href={getResumeLink()} target="_blank" rel="noopener noreferrer">
+            <a
+              href={
+                cvPt
+                  ? "https://drive.google.com/file/d/1zhw6fc4zUAiqo94OcQWkcz-DTq4Skf4n/view?usp=sharing"
+                  : "https://drive.google.com/file/d/1Lt6UGmqBXSKZ9WO8e8BqkZdY_Wl4nl-L/view?usp=sharing"
+              }
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {t("resume")}
             </a>
           </div>
