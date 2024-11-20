@@ -35,8 +35,10 @@ const ProjectCard = ({
         </ul> */}
       </div>
       <div className="w-screen px-8 py-8 text-gray-900 select-text lg:w-auto">
-        <h1 className="text-4xl font-murecho text-balance">{title}</h1>
-        <ul className="py-8 list-disc lg:max-w-md">
+        <h1 className="text-2xl uppercase font-murecho text-balance">
+          {title}
+        </h1>
+        <ul className="py-5 list-disc lg:max-w-md">
           {points.map((point, index) => (
             <li key={index} className="py-px">
               <Trans

@@ -5,8 +5,14 @@ import {
   At,
   CaretDoubleRight,
   Envelope,
+  GithubLogo,
+  Headset,
   IconProps,
   IdentificationCard,
+  LinkedinLogo,
+  Star,
+  User,
+  WhatsappLogo,
 } from "@phosphor-icons/react";
 
 const InputField = ({
@@ -56,7 +62,7 @@ const TextareaField = ({
       placeholder={placeholder}
       rows={rows}
       required={required}
-      className="scrollbar-thin scrollbar-thumb-purple-theme scrollbar-track-[#ABA272] bg-transparent placeholder:text-purple-theme w-[85%] focus:outline-none focus:border-b-2 focus:border-b-purple-theme text-gray-900 font-bold resize-none relative top-1 placeholder:pl-1"
+      className="scrollbar-thin scrollbar-thumb-purple-theme scrollbar-gray-100 bg-transparent placeholder:text-purple-theme w-[85%] focus:outline-none focus:border-b-2 focus:border-b-purple-theme text-gray-900 font-bold resize-none relative top-1 placeholder:pl-1"
     />
   </div>
 );
@@ -148,17 +154,61 @@ export default function Contact() {
 
   return (
     <div
-      className="flex items-center justify-center bg-[url('/src/assets/services-bg.png')] min-h-screen bg-gray-100 "
+      className="flex items-center justify-center bg-[url('/src/assets/services-bg.png')] min-h-screen bg-gray-100"
       id="contact"
     >
-      <div className="flex flex-col items-center justify-center h-full gap-10 lg:flex-row">
-        <div>
-          <h1 className="pb-2 text-5xl uppercase text-purple-theme font-murecho">
+      <div className="flex flex-col items-center justify-center h-full gap-20 lg:flex-row">
+        <div className="flex flex-col items-center justify-center pt-16 lg:pt-0">
+          <h1 className="pb-2 text-3xl uppercase lg:text-5xl text-purple-theme font-murecho">
             {t("title")}
           </h1>
-          <p className="text-xl text-gray-900">{t("subtitle")}</p>
+          <p className="text-gray-900 lg:text-xl">{t("subtitle")}</p>
+          <div className="relative scale-75 lg:scale-100 top-10">
+            <User className="text-[15rem] text-purple-theme" />
+            <Headset
+              weight="fill"
+              className="text-[13rem] absolute -top-10 left-4 text-gray-900"
+            />
+            <Star
+              weight="fill"
+              className="absolute text-yellow-theme top-20 left-12"
+            />
+          </div>
         </div>
-        <ContactForm />
+        <div className="flex flex-col items-center">
+          <p className="text-lg font-murecho">{t("social")}</p>
+          <div className="flex text-[2.2rem] lg:text-[2.5rem] lg:gap-3 pb-10 pt-3">
+            <a
+              href="https://www.linkedin.com/in/isabella-laschi/"
+              aria-label="LinkedIn"
+              target="_blank"
+              className="bg-[#0E76A8] flex rounded-lg items-center px-2 py-1 gap-1 text-gray-100 hover:brightness-110 transition"
+            >
+              <LinkedinLogo />
+              <p className="text-lg font-bold">Linkedin</p>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/isabella-laschi/"
+              aria-label="LinkedIn"
+              target="_blank"
+              className="bg-[#171515] flex rounded-lg items-center px-2 py-1 gap-1 text-gray-100 hover:brightness-110 transition"
+            >
+              <GithubLogo />
+              <p className="text-lg font-bold">Github</p>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/isabella-laschi/"
+              aria-label="LinkedIn"
+              target="_blank"
+              className="bg-[#329431] flex rounded-lg items-center px-2 py-1 gap-1 text-gray-100 hover:brightness-110 transition"
+            >
+              <WhatsappLogo />
+              <p className="text-lg font-bold">WhatsApp</p>
+            </a>
+          </div>
+          <p className="text-lg">{t("form")}</p>
+          <ContactForm />
+        </div>
       </div>
     </div>
   );

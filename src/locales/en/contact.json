@@ -1,6 +1,8 @@
 {
   "title": "Get started now!",
   "subtitle": "Let's talk about your next project?",
+  "social": "Get in touch via social media:",
+  "form": "or send a message directly to me!",
   "formSuccess": "Message sent successfully!",
   "formError": "An error occurred. Please try again.",
   "field": {

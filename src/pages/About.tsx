@@ -49,7 +49,7 @@ export default function About({ cvPt }: { cvPt: boolean }) {
   const { t } = useTranslation("about");
 
   return (
-    <div className="relative flex justify-center min-h-screen p-5 overflow-hidden bg-gray-900 lg:items-center lg:p-20">
+    <div className="bg-[url('/src/assets/about-bg.png')] bg-no-repeat bg-left-bottom relative flex justify-center min-h-screen p-5 overflow-hidden bg-gray-900 lg:items-center lg:p-20">
       <div className="flex flex-col items-center gap-5 lg:flex-row max-w-screen-2xl">
         <div className="flex flex-col items-center justify-center scale-125 md:scale-90 lg:scale-100 mt-32 lg:mt-0 my-3 text-center lg:mb-[15%]">
           <img
@@ -76,7 +76,7 @@ export default function About({ cvPt }: { cvPt: boolean }) {
               <BulletPoint key={textKey} icon={icon} text={t(textKey)} />
             ))}
           </div>
-          <div className="flex items-center justify-center gap-2 my-5 text-lg uppercase lg:justify-start font-murecho text-yellow-theme">
+          <div className="flex items-center justify-center gap-2 pb-10 my-5 text-lg uppercase lg:justify-start font-murecho text-yellow-theme">
             <CaretDoubleRight />
             <a
               href={
@@ -92,11 +92,6 @@ export default function About({ cvPt }: { cvPt: boolean }) {
           </div>
         </div>
       </div>
-      <img
-        src={bgAbout}
-        alt="background texture"
-        className="absolute bottom-0 left-0"
-      />
     </div>
   );
 }
