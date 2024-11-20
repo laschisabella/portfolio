@@ -22,7 +22,7 @@ const InputField = ({
   type?: string;
   required?: boolean;
 }) => (
-  <div className="bg-gray-100/30 backdrop-blur-sm text-[#6B633C] gap-3 px-5 py-4 rounded-xl flex select-none">
+  <div className="flex gap-3 px-5 py-4 select-none bg-gray-600/10 backdrop-blur-sm text-purple-theme rounded-xl">
     <Icon size={32} />
     <label className="sr-only">{placeholder}</label>
     <input
@@ -30,7 +30,7 @@ const InputField = ({
       name={name}
       placeholder={placeholder}
       required={required}
-      className="bg-transparent placeholder:text-[#6B633C] w-[85%] focus:outline-none focus:border-b-2 focus:border-b-[#6B633C] text-gray-900 font-bold placeholder:pl-1"
+      className="bg-transparent placeholder:text-purple-theme w-[85%] focus:outline-none focus:border-b-2 focus:border-b-purple-theme text-gray-900 font-bold placeholder:pl-1"
     />
   </div>
 );
@@ -48,7 +48,7 @@ const TextareaField = ({
   rows?: number;
   required?: boolean;
 }) => (
-  <div className="bg-gray-100/30 backdrop-blur-sm text-[#6B633C] gap-3 px-5 py-4 rounded-xl flex select-none">
+  <div className="flex gap-3 px-5 py-4 select-none bg-gray-600/10 backdrop-blur-sm text-purple-theme rounded-xl">
     <Icon size={32} />
     <label className="sr-only">{placeholder}</label>
     <textarea
@@ -56,7 +56,7 @@ const TextareaField = ({
       placeholder={placeholder}
       rows={rows}
       required={required}
-      className="scrollbar-thin scrollbar-thumb-[#6B633C] scrollbar-track-[#ABA272] bg-transparent placeholder:text-[#6B633C] w-[85%] focus:outline-none focus:border-b-2 focus:border-b-[#6B633C] text-gray-900 font-bold resize-none relative top-1 placeholder:pl-1"
+      className="scrollbar-thin scrollbar-thumb-purple-theme scrollbar-track-[#ABA272] bg-transparent placeholder:text-purple-theme w-[85%] focus:outline-none focus:border-b-2 focus:border-b-purple-theme text-gray-900 font-bold resize-none relative top-1 placeholder:pl-1"
     />
   </div>
 );
@@ -148,14 +148,16 @@ export default function Contact() {
 
   return (
     <div
-      className="flex items-center justify-center bg-[url('/src/assets/projects-bg.png')] bg-cover min-h-screen bg-[#9F84A9] "
+      className="flex items-center justify-center bg-[url('/src/assets/services-bg.png')] min-h-screen bg-gray-100 "
       id="contact"
     >
-      <div className="flex flex-col items-center justify-center h-full">
-        <h1 className="pb-2 text-3xl text-gray-900 uppercase font-murecho">
-          {t("title")}
-        </h1>
-        <p className="text-gray-900">{t("subtitle")}</p>
+      <div className="flex flex-col items-center justify-center h-full gap-10 lg:flex-row">
+        <div>
+          <h1 className="pb-2 text-5xl uppercase text-purple-theme font-murecho">
+            {t("title")}
+          </h1>
+          <p className="text-xl text-gray-900">{t("subtitle")}</p>
+        </div>
         <ContactForm />
       </div>
     </div>

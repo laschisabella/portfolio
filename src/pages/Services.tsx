@@ -92,7 +92,7 @@ const Services = () => {
 
   return (
     <section
-      className="bg-[url('/src/assets/services-bg.png')] px-3 py-8 bg-cover bg-gray-100"
+      className="bg-[url('/src/assets/services-bg.png')] px-3 pb-8 pt-8 bg-gray-100 lg:pt-32"
       id="services"
     >
       <div className="flex flex-col items-center justify-center h-full max-w-screen-xl mx-auto lg:flex-row">

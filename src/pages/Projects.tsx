@@ -35,9 +35,7 @@ const ProjectCard = ({
         </ul> */}
       </div>
       <div className="w-screen px-8 py-8 text-gray-900 select-text lg:w-auto">
-        <h1 className="text-4xl text-purple-theme font-murecho text-balance">
-          {title}
-        </h1>
+        <h1 className="text-4xl font-murecho text-balance">{title}</h1>
         <ul className="py-8 list-disc lg:max-w-md">
           {points.map((point, index) => (
             <li key={index} className="py-px">
@@ -120,11 +118,11 @@ export default function Projects() {
 
   return (
     <div
-      className="bg-[url('/src/assets/services-bg.png')] bg-cover min-h-screen bg-gray-100 flex flex-col justify-center items-center"
+      className="bg-[url('/src/assets/services-bg.png')] min-h-screen bg-gray-100 flex flex-col justify-center items-center"
       id="projects"
     >
       <div className="pt-32 lg:pt-0 my-7">
-        <h1 className="text-4xl text-center text-gray-900 lg:text-5xl font-major">
+        <h1 className="text-4xl text-center text-purple-theme lg:text-5xl font-murecho">
           {t("title")}
         </h1>
       </div>
@@ -133,8 +131,8 @@ export default function Projects() {
           onClick={handlePrevious}
           className="z-10 absolute top-[35%] md:top-[50%] cursor-pointer -translate-y-[50%] left-[20%] lg:left-0 text-7xl transition hover:brightness-125"
         >
-          <CaretDoubleLeft className="translate-x-3 translate-y-1/2 text-zinc-500" />
-          <CaretDoubleLeft className="-translate-y-1/2 text-yellow-theme" />
+          <CaretDoubleLeft className="translate-x-3 translate-y-1/2 text-yellow-theme" />
+          <CaretDoubleLeft className="-translate-y-1/2 text-purple-theme" />
         </div>
         <div
           className="flex transition-transform duration-500 ease-in-out"
@@ -163,7 +161,7 @@ export default function Projects() {
           onClick={handleNext}
           className="hidden md:block z-10 absolute top-[35%] md:top-[50%] cursor-pointer -translate-y-[50%] right-[20%] lg:right-3 text-7xl transition hover:brightness-125"
         >
-          <CaretDoubleRight className="translate-x-3 translate-y-1/2 text-zinc-500" />
+          <CaretDoubleRight className="translate-x-3 translate-y-1/2 text-purple-theme" />
           <CaretDoubleRight className="-translate-y-1/2 text-yellow-theme" />
         </div>
       </div>
