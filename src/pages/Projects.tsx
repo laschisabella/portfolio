@@ -1,13 +1,11 @@
 import { CaretDoubleLeft, CaretDoubleRight } from "@phosphor-icons/react";
 import { useState } from "react";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 import getProjects from "../data/projectsData";
 
 type ProjectCardProps = {
   title: string;
-  description: string;
-  challenge: string;
-  solution: string;
+  points: string[];
   img: string;
   tech: string[];
   repo?: string;
@@ -16,64 +14,69 @@ type ProjectCardProps = {
 
 const ProjectCard = ({
   title,
-  description,
-  challenge,
-  solution,
+  points,
   img,
-  tech,
+  //tech,
   repo = "",
   deploy,
 }: ProjectCardProps) => {
   const { t } = useTranslation("projects");
 
   return (
-    <div className="flex flex-col items-center justify-between w-full gap-5 p-5 select-none md:flex-row">
-      <div className="flex flex-col items-center p-5">
-        <img src={img} alt="project image" className="w-96 lg:w-full" />
-        <ul className="flex flex-wrap justify-center gap-3">
+    <div className="flex flex-col items-center justify-center gap-5 p-5 m-10 rounded-lg select-none backdrop-blur-sm bg-gray-600/10 lg:flex-row">
+      <div className="flex flex-col items-center w-[50%] p-5">
+        <img src={img} alt="project image" className="" />
+        {/* <ul className="flex flex-wrap justify-center gap-3">
           {tech.map((item, index) => (
-            <li
-              key={index}
-              className="px-3 py-1 text-xs font-bold text-gray-200 uppercase bg-gray-900 rounded-full"
-            >
-              {item}
+            <li key={index} className="px-2 py-1 text-7xl">
+              <i className={item} />
+            </li>
+          ))}
+        </ul> */}
+      </div>
+      <div className="w-screen px-8 py-8 text-gray-900 select-text lg:w-auto">
+        <h1 className="text-4xl text-purple-theme font-murecho text-balance">
+          {title}
+        </h1>
+        <ul className="py-8 list-disc lg:max-w-md">
+          {points.map((point, index) => (
+            <li key={index} className="py-px">
+              <Trans
+                i18nKey={point}
+                components={{ strong: <strong className="font-murecho" /> }}
+              />
             </li>
           ))}
         </ul>
-      </div>
-      <div className="max-w-xs p-10 mr-20 text-gray-900 select-text lg:max-w-screen-sm backdrop-blur-sm bg-gray-200/20">
-        <h1 className="pb-5 text-2xl text-center font-murecho">{title}</h1>
-        <div>
-          <ProjectInfoRow label={t("label.description")} value={description} />
-          <ProjectInfoRow label={t("label.challenge")} value={challenge} />
-          <ProjectInfoRow label={t("label.solution")} value={solution} />
-        </div>
-        <div className="relative flex flex-col-reverse items-center gap-2 uppercase select-none lg:gap-5 lg:flex-row font-murecho top-10 lg:top-0">
+        <div className="flex flex-col gap-2 uppercase select-none font-murecho">
+          <ProjectLink
+            href={deploy}
+            label={t("label.deploy")}
+            icon={
+              <CaretDoubleRight
+                weight="bold"
+                className="relative top-px text-purple-theme"
+              />
+            }
+            extraClasses="text-xl"
+          />
           {repo && (
             <ProjectLink
               href={repo}
               label={t("label.repository")}
-              icon={<CaretDoubleRight className="relative top-px" />}
+              icon={
+                <CaretDoubleRight
+                  weight="bold"
+                  className="relative text-purple-theme top-px"
+                />
+              }
             />
           )}
-          <ProjectLink
-            href={deploy}
-            label={t("label.deploy")}
-            icon={<CaretDoubleRight className="relative top-px" />}
-            extraClasses="px-5 py-3 text-xl rounded-xl bg-gray-100/50 hover:brightness-90"
-          />
         </div>
       </div>
     </div>
   );
 };
-
-const ProjectInfoRow = ({ label, value }: { label: string; value: string }) => (
-  <div className="gap-2 ">
-    <span className="font-bold ">{label}</span>
-    <span className="">{value}</span>
-  </div>
-);
 
 const ProjectLink = ({
   href,
@@ -89,7 +92,7 @@ const ProjectLink = ({
   <a
     href={href}
     target="_blank"
-    className={`flex items-center gap-2 text-gray-900 transition hover:brightness-50 ${extraClasses}`}
+    className={`flex items-center gap-2 text-gray-900 transition hover:brightness-200 ${extraClasses}`}
   >
     {icon}
     <span>{label}</span>
@@ -101,36 +104,41 @@ export default function Projects() {
   const { t } = useTranslation("projects");
   const projectsData = getProjects();
 
-  const handleNext = () => {
-    setCurrentProject((prevIndex) => (prevIndex + 1) % projectsData.length);
-  };
+  const getNextIndex = (currentIndex: number, length: number) =>
+    (currentIndex + 1) % length;
+  const getPreviousIndex = (currentIndex: number, length: number) =>
+    (currentIndex - 1 + length) % length;
 
-  const handlePrevious = () => {
-    setCurrentProject(
-      (prevIndex) => (prevIndex - 1 + projectsData.length) % projectsData.length
+  const handleNext = () =>
+    setCurrentProject((prevIndex) =>
+      getNextIndex(prevIndex, projectsData.length)
     );
-  };
+  const handlePrevious = () =>
+    setCurrentProject((prevIndex) =>
+      getPreviousIndex(prevIndex, projectsData.length)
+    );
 
   return (
     <div
-      className="bg-[url('/src/assets/projects-bg.png')] bg-cover min-h-screen bg-[#9F84A9] flex flex-col justify-center items-center"
+      className="bg-[url('/src/assets/services-bg.png')] bg-cover min-h-screen bg-gray-100 flex flex-col justify-center items-center"
       id="projects"
     >
-      <div className="mt-32">
-        <h1 className="text-4xl text-center lg:text-6xl font-major">
+      <div className="pt-32 lg:pt-0 my-7">
+        <h1 className="text-4xl text-center text-gray-900 lg:text-5xl font-major">
           {t("title")}
         </h1>
       </div>
-      <div className="relative flex flex-col items-center justify-center h-full gap-5 overflow-hidden w-80 lg:w-min">
-        <CaretDoubleLeft
+      <div className="relative flex flex-col items-center justify-center h-full gap-5 overflow-hidden w-screen lg:w-[70vw]">
+        <div
           onClick={handlePrevious}
-          className="z-10 absolute top-[12%] lg:top-[50%] cursor-pointer -translate-y-[50%] left-5 text-7xl transition hover:brightness-200 text-yellow-theme brightness-125"
-        />
+          className="z-10 absolute top-[35%] md:top-[50%] cursor-pointer -translate-y-[50%] left-[20%] lg:left-0 text-7xl transition hover:brightness-125"
+        >
+          <CaretDoubleLeft className="translate-x-3 translate-y-1/2 text-zinc-500" />
+          <CaretDoubleLeft className="-translate-y-1/2 text-yellow-theme" />
+        </div>
         <div
           className="flex transition-transform duration-500 ease-in-out"
-          style={{
-            transform: `translateX(-${currentProject * 100}%)`,
-          }}
+          style={{ transform: `translateX(-${currentProject * 100}%)` }}
         >
           {projectsData.map((project, index) => (
             <div key={index} className="min-w-full">
@@ -140,17 +148,24 @@ export default function Projects() {
                 repo={project.repo}
                 deploy={project.deploy}
                 title={t(project.titleKey)}
-                description={t(project.descriptionKey)}
-                challenge={t(project.challengeKey)}
-                solution={t(project.solutionKey)}
+                points={[
+                  t(project.point1Key),
+                  t(project.point2Key),
+                  t(project.point3Key),
+                  t(project.point4Key),
+                  t(project.point5Key),
+                ]}
               />
             </div>
           ))}
         </div>
-        <CaretDoubleRight
+        <div
           onClick={handleNext}
-          className="z-10 absolute top-[12%] lg:top-[50%] cursor-pointer -translate-y-[50%] right-5 text-7xl transition hover:brightness-200 text-yellow-theme brightness-125"
-        />
+          className="hidden md:block z-10 absolute top-[35%] md:top-[50%] cursor-pointer -translate-y-[50%] right-[20%] lg:right-3 text-7xl transition hover:brightness-125"
+        >
+          <CaretDoubleRight className="translate-x-3 translate-y-1/2 text-zinc-500" />
+          <CaretDoubleRight className="-translate-y-1/2 text-yellow-theme" />
+        </div>
       </div>
     </div>
   );

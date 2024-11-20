@@ -2,22 +2,23 @@
   "title": "Projetos Recentes",
   "subtitle": "Aplicando tecnologias modernas para criar soluções reais.",
   "label": {
-    "description": "Descrição:",
-    "challenge": "Desafios:",
-    "solution": "Solução:",
     "repository": "repositório",
     "deploy": "confira este projeto!"
   },
   "project1": {
-    "title": "laschisa coffee shop",
-    "description": "",
-    "challenge": "",
-    "solution": ""
+    "title": "Laschisa Coffee Shop",
+    "point1": "O objetivo principal foi criar uma aplicação de e-commerce fictício de café com design moderno e responsivo.",
+    "point2": "Desenvolvido em <strong>Next.js 14</strong> com <strong>React 18</strong>, utilizando renderização do lado do servidor para melhor performance.",
+    "point3": "Estilizado com <strong>TailwindCSS</strong>, garantindo personalização e facilidade na criação de layouts responsivos.",
+    "point4": "Integração de <strong>Framer Motion</strong> para animações suaves, aprimorando a experiência do usuário.",
+    "point5": "Uso de <strong>TypeScript</strong> para garantir tipagem rigorosa e escalabilidade do código."
   },
   "project2": {
     "title": "Laschisa Financial",
-    "description": "App para simular operações financeiras, gerenciar transações e criar uma interface amigável e responsiva!",
-    "challenge": "Um dos principais desafios foi gerenciar o estado dos componentes de forma eficiente em um contexto de operações financeiras, garantindo que as transações fossem renderizadas corretamente e que a interface fosse responsiva. Além disso, aprender a usar o MirageJS para simular APIs e lidar com tipagem estática no TypeScript trouxe uma curva de aprendizado.",
-    "solution": "Os desafios foram solucionados implementando boas práticas de código limpo e modularidade, além de uma estrutura bem organizada para componentes e estados. O uso do MirageJS possibilitou simular APIs e realizar testes com dados fictícios, enquanto o Vite assegurou builds rápidos e otimizados. A introdução de TypeScript permitiu prever e evitar erros, garantindo maior segurança e previsibilidade no código."
+    "point1": "O objetivo principal foi simular operações financeiras, gerenciar transações e criar uma interface responsiva e amigável.",
+    "point2": "Desenvolvido em <strong>React.js</strong> com <strong>TypeScript</strong>, estilizado usando <strong>Styled-Components</strong> e empacotado com <strong>Vite</strong>.",
+    "point3": "Bibliotecas como <strong>Axios</strong> e <strong>MirageJS</strong> foram integradas para testes eficientes com dados mock e manipulação de comunicação assíncrona.",
+    "point4": "Implementação de boas práticas em código limpo e modularidade.",
+    "point5": "Uso de uma estrutura bem organizada para componentes e estado."
   }
 }

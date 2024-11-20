@@ -148,7 +148,7 @@ export default function Contact() {
 
   return (
     <div
-      className="bg-[url('/src/assets/contact-bg.png')] bg-cover min-h-screen bg-[#ABA272] flex justify-center items-center"
+      className="flex items-center justify-center bg-[url('/src/assets/projects-bg.png')] bg-cover min-h-screen bg-[#9F84A9] "
       id="contact"
     >
       <div className="flex flex-col items-center justify-center h-full">

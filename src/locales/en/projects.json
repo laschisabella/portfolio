@@ -9,15 +9,19 @@
     "deploy": "check out this project!"
   },
   "project1": {
-    "title": "",
-    "description": "",
-    "challenge": "",
-    "solution": ""
+    "title": "Laschisa Coffee Shop",
+    "point1": "The main goal was to create a fictional coffee e-commerce application with a modern and responsive design.",
+    "point2": "Developed in <strong>Next.js 14</strong> with <strong>React 18</strong>, utilizing server-side rendering for better performance.",
+    "point3": "Styled with <strong>TailwindCSS</strong>, ensuring customization and ease in creating responsive layouts.",
+    "point4": "Integration of <strong>Framer Motion</strong> for smooth animations, enhancing user experience.",
+    "point5": "Use of <strong>TypeScript</strong> to ensure strict typing and code scalability."
   },
   "project2": {
     "title": "Laschisa Financial",
-    "description": "Laschisa Financial is a project developed in React with TypeScript, styled using Styled-Components, and bundled with Vite. The main goal was to simulate financial operations, manage transactions, and create a user-friendly, responsive interface. During development, libraries such as Axios and MirageJS were integrated, enabling efficient testing with mock data and handling asynchronous communication.",
-    "challenge": "One of the main challenges was efficiently managing component state in the context of financial operations, ensuring that transactions were rendered correctly and that the interface remained responsive. Additionally, learning to use MirageJS for API simulation and working with static typing in TypeScript presented a learning curve.",
-    "solution": "The challenges were addressed by implementing best practices in clean code and modularity, along with a well-organized structure for components and state. The use of MirageJS enabled API simulations and testing with mock data, while Vite ensured fast and optimized builds. Introducing TypeScript allowed for better error prevention, providing greater code security and predictability."
+    "point1": "The main goal was to simulate financial operations, manage transactions, and create a user-friendly and responsive interface.",
+    "point2": "Developed in <strong>React</strong> with <strong>TypeScript</strong>, styled using <strong>Styled-Components</strong>, and bundled with <strong>Vite</strong>.",
+    "point3": "Libraries such as <strong>Axios</strong> and <strong>MirageJS</strong> were integrated for efficient testing with mock data and handling asynchronous communication.",
+    "point4": "Implementation of best practices in clean code and modularity.",
+    "point5": "Use of a well-organized structure for components and state."
   }
 }
