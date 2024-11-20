@@ -82,14 +82,14 @@ export default function About() {
             {t("logo")}
           </span>
         </div>
-        <div className="max-w-xl">
+        <div className="max-w-2xl">
           <h1 className="text-xl mt-10 md:mt-2 md:text-[2.5rem] leading-snug font-major text-yellow-theme">
             {t("title")}
           </h1>
-          <h1 className="text-xl md:text-[2.5rem] leading-snug font-major text-yellow-theme text-balance">
+          <h1 className="text-xl md:text-[2.5rem] leading-snug font-major text-zinc-400 text-balance">
             {t("title2")}
           </h1>
-          <h1 className="text-xl md:text-[2.5rem] leading-snug font-major text-yellow-theme text-balance">
+          <h1 className="text-xl md:text-[2.5rem] leading-snug font-major text-zinc-200 text-balance">
             {t("title3")}
           </h1>
           <p className="py-5 text-base text-gray-200 md:text-xl font-murecho">
