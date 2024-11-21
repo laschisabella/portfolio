@@ -13,33 +13,35 @@ interface BulletPointProps {
   text: string;
 }
 
-const bulletPoints = [
-  {
-    icon: <SealCheck weight="fill" className="text-2xl text-purple-theme" />,
-    textKey: "bullet1",
-  },
-  {
-    icon: <RocketLaunch weight="fill" className="text-2xl text-yellow-theme" />,
-    textKey: "bullet2",
-  },
-  {
-    icon: <UserFocus weight="fill" className="text-2xl text-purple-theme" />,
-    textKey: "bullet3",
-  },
-  {
-    icon: <Globe weight="fill" className="text-2xl text-yellow-theme" />,
-    textKey: "bullet4",
-  },
-  {
-    icon: <MapPin weight="fill" className="text-2xl text-purple-theme" />,
-    textKey: "bullet5",
-  },
-];
-
 const BulletPoint = ({ icon, text }: BulletPointProps) => (
   <div className="flex items-center gap-3 mb-2">
     {icon}
     <p>{text}</p>
+  </div>
+);
+
+const bulletPointsData = [
+  { Icon: SealCheck, color: "text-purple-theme", textKey: "bullet1" },
+  { Icon: RocketLaunch, color: "text-yellow-theme", textKey: "bullet2" },
+  { Icon: UserFocus, color: "text-purple-theme", textKey: "bullet3" },
+  { Icon: Globe, color: "text-yellow-theme", textKey: "bullet4" },
+  { Icon: MapPin, color: "text-purple-theme", textKey: "bullet5" },
+];
+
+const ResumeLink = ({ cvPt, text }: { cvPt: boolean; text: string }) => (
+  <div className="flex items-center justify-center gap-2 pb-10 my-5 text-lg uppercase lg:justify-start font-murecho text-yellow-theme">
+    <CaretDoubleRight />
+    <a
+      href={
+        cvPt
+          ? "https://drive.google.com/file/d/1zhw6fc4zUAiqo94OcQWkcz-DTq4Skf4n/view?usp=sharing"
+          : "https://drive.google.com/file/d/1Lt6UGmqBXSKZ9WO8e8BqkZdY_Wl4nl-L/view?usp=sharing"
+      }
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {text}
+    </a>
   </div>
 );
 
@@ -70,24 +72,15 @@ export default function About({ cvPt }: { cvPt: boolean }) {
             {t("subtitle")}
           </p>
           <div className="flex flex-col max-w-md mx-auto mt-5 text-gray-200 lg:max-w-2xl">
-            {bulletPoints.map(({ icon, textKey }) => (
-              <BulletPoint key={textKey} icon={icon} text={t(textKey)} />
+            {bulletPointsData.map(({ Icon, color, textKey }) => (
+              <BulletPoint
+                key={textKey}
+                icon={<Icon weight="fill" className={`text-2xl ${color}`} />}
+                text={t(textKey)}
+              />
             ))}
           </div>
-          <div className="flex items-center justify-center gap-2 pb-10 my-5 text-lg uppercase lg:justify-start font-murecho text-yellow-theme">
-            <CaretDoubleRight />
-            <a
-              href={
-                cvPt
-                  ? "https://drive.google.com/file/d/1zhw6fc4zUAiqo94OcQWkcz-DTq4Skf4n/view?usp=sharing"
-                  : "https://drive.google.com/file/d/1Lt6UGmqBXSKZ9WO8e8BqkZdY_Wl4nl-L/view?usp=sharing"
-              }
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {t("resume")}
-            </a>
-          </div>
+          <ResumeLink cvPt={cvPt} text={t("resume")} />
         </div>
       </div>
     </div>

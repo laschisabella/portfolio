@@ -16,7 +16,6 @@ const ProjectCard = ({
   title,
   points,
   img,
-  //tech,
   repo = "",
   deploy,
 }: ProjectCardProps) => {
@@ -27,7 +26,7 @@ const ProjectCard = ({
       <div className="flex flex-col items-center w-[80%] lg:w-full xl:w-1/2">
         <img src={img} alt="project image" />
       </div>
-      <div className="px-16 py-5 text-gray-900 select-text  w-[80%] lg:w-auto lg:px-5 lg:py-5">
+      <div className="px-16 py-5 text-gray-900 select-text w-[80%] lg:w-auto lg:px-5 lg:py-5">
         <h1 className="text-2xl uppercase font-murecho text-balance">
           {title}
         </h1>
@@ -60,7 +59,7 @@ const ProjectCard = ({
               icon={
                 <CaretDoubleRight
                   weight="bold"
-                  className="relative text-yellow-theme top-px"
+                  className="relative top-px text-yellow-theme"
                 />
               }
             />
@@ -85,6 +84,7 @@ const ProjectLink = ({
   <a
     href={href}
     target="_blank"
+    rel="noreferrer"
     className={`flex items-center gap-2 text-gray-900 transition hover:brightness-200 ${extraClasses}`}
   >
     {icon}
@@ -146,7 +146,6 @@ export default function Projects() {
             />
           </div>
         </div>
-
         <div className="relative flex flex-col items-center justify-center h-full gap-5 overflow-hidden w-screen lg:w-[80vw]">
           <div
             className="flex transition-transform duration-500 ease-in-out"

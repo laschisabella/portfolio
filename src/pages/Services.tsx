@@ -34,7 +34,7 @@ const servicesData = [
   {
     titleKey: "title1",
     descriptionKey: "description1",
-    icons: (
+    iconContent: (
       <>
         <Layout weight="light" className="text-gray-600 text-8xl" />
         <PaintBrush
@@ -47,7 +47,7 @@ const servicesData = [
   {
     titleKey: "title2",
     descriptionKey: "description2",
-    icons: (
+    iconContent: (
       <>
         <ShoppingCart weight="light" className="text-gray-600 text-8xl" />
         <Coins
@@ -60,22 +60,20 @@ const servicesData = [
   {
     titleKey: "title3",
     descriptionKey: "description3",
-    icons: (
+    iconContent: (
       <>
-        <div className="mr-5 lg:mr-0">
-          <Lightning weight="light" className="text-gray-600 text-8xl" />
-          <Lightning
-            weight="light"
-            className="absolute text-8xl -top-[0.2rem] right-[0.3rem] lg:-right-[0.3rem] text-yellow-theme"
-          />
-        </div>
+        <Lightning weight="light" className="text-gray-600 text-8xl" />
+        <Lightning
+          weight="light"
+          className="absolute text-8xl -top-[0.2rem] right-[0.3rem] lg:-right-[0.3rem] text-yellow-theme"
+        />
       </>
     ),
   },
   {
     titleKey: "title4",
     descriptionKey: "description4",
-    icons: (
+    iconContent: (
       <>
         <Monitor weight="light" className="text-gray-600 text-8xl" />
         <ListHeart
@@ -96,20 +94,22 @@ const Services = () => {
       id="services"
     >
       <div className="flex flex-col items-center justify-center h-full max-w-screen-xl mx-auto lg:flex-row">
-        <div className="max-w-lg">
+        <header className="max-w-lg">
           <h1 className="mx-5 mt-24 mb-10 text-2xl text-center lg:text-left md:text-3xl lg:text-5xl font-murecho text-purple-theme text-balance">
             {t("title")}
           </h1>
-        </div>
+        </header>
         <div className="grid grid-cols-1 gap-5 p-4 text-center lg:grid-cols-2 lg:p-10">
-          {servicesData.map(({ titleKey, descriptionKey, icons }, index) => (
-            <ServiceCard
-              key={index}
-              title={t(titleKey)}
-              description={t(descriptionKey)}
-              icon={<IconWrapper>{icons}</IconWrapper>}
-            />
-          ))}
+          {servicesData.map(
+            ({ titleKey, descriptionKey, iconContent }, index) => (
+              <ServiceCard
+                key={index}
+                title={t(titleKey)}
+                description={t(descriptionKey)}
+                icon={<IconWrapper>{iconContent}</IconWrapper>}
+              />
+            )
+          )}
         </div>
       </div>
     </section>
