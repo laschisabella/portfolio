@@ -1,9 +1,11 @@
 {
-  "title": "Projetos Recentes",
+  "title": "Projetos",
   "subtitle": "Aplicando tecnologias modernas para criar soluções reais.",
   "label": {
     "repository": "repositório",
-    "deploy": "confira este projeto!"
+    "deploy": "confira este projeto!",
+    "next": "próximo",
+    "previous": "anterior"
   },
   "project1": {
     "title": "Laschisa Coffee Shop",

@@ -125,7 +125,7 @@ export default function App() {
           key={id}
           id={id}
           ref={(el) => (sectionsRef.current[id] = el)}
-          className="scroll-mt-16"
+          className="scroll-mt-10"
         >
           {id === "about" && <About cvPt={cvPt} />}
           {id === "services" && <Services />}

@@ -23,18 +23,11 @@ const ProjectCard = ({
   const { t } = useTranslation("projects");
 
   return (
-    <div className="flex flex-col items-center justify-center gap-5 p-5 m-10 rounded-lg select-none backdrop-blur-sm bg-gray-600/10 lg:flex-row">
-      <div className="flex flex-col items-center w-[50%] p-5">
-        <img src={img} alt="project image" className="" />
-        {/* <ul className="flex flex-wrap justify-center gap-3">
-          {tech.map((item, index) => (
-            <li key={index} className="px-2 py-1 text-7xl">
-              <i className={item} />
-            </li>
-          ))}
-        </ul> */}
+    <div className="flex flex-col items-center justify-center gap-5 rounded-lg select-none lg:flex-row">
+      <div className="flex flex-col items-center w-[80%] lg:w-full xl:w-1/2">
+        <img src={img} alt="project image" />
       </div>
-      <div className="w-screen px-8 py-8 text-gray-900 select-text lg:w-auto">
+      <div className="px-16 py-5 text-gray-900 select-text  w-[80%] lg:w-auto lg:px-5 lg:py-5">
         <h1 className="text-2xl uppercase font-murecho text-balance">
           {title}
         </h1>
@@ -55,7 +48,7 @@ const ProjectCard = ({
             icon={
               <CaretDoubleRight
                 weight="bold"
-                className="relative top-px text-purple-theme"
+                className="relative top-px text-yellow-theme"
               />
             }
             extraClasses="text-xl"
@@ -67,7 +60,7 @@ const ProjectCard = ({
               icon={
                 <CaretDoubleRight
                   weight="bold"
-                  className="relative text-purple-theme top-px"
+                  className="relative text-yellow-theme top-px"
                 />
               }
             />
@@ -119,52 +112,65 @@ export default function Projects() {
     );
 
   return (
-    <div
-      className="bg-[url('/src/assets/services-bg.png')] min-h-screen bg-gray-100 flex flex-col justify-center items-center"
-      id="projects"
-    >
-      <div className="pt-32 lg:pt-0 my-7">
-        <h1 className="text-4xl text-center text-purple-theme lg:text-5xl font-murecho">
+    <div className="bg-[url('/src/assets/services-bg.png')] min-h-screen bg-gray-100 flex flex-col items-center">
+      <div className="flex flex-col items-center">
+        <h1 className="relative pt-16 text-4xl select-none md:hidden text-purple-theme lg:text-6xl font-murecho bottom-2">
           {t("title")}
         </h1>
-      </div>
-      <div className="relative flex flex-col items-center justify-center h-full gap-5 overflow-hidden w-screen lg:w-[70vw]">
-        <div
-          onClick={handlePrevious}
-          className="z-10 absolute top-[35%] md:top-[50%] cursor-pointer -translate-y-[50%] left-[20%] lg:left-0 text-7xl transition hover:brightness-125"
-        >
-          <CaretDoubleLeft className="translate-x-3 translate-y-1/2 text-yellow-theme" />
-          <CaretDoubleLeft className="-translate-y-1/2 text-purple-theme" />
+        <div className="flex items-center justify-center gap-16 my-[6%] md:pt-32 lg:pt-0">
+          <div
+            onClick={handlePrevious}
+            className="flex items-center gap-1 transition cursor-pointer select-none hover:brightness-110"
+          >
+            <CaretDoubleLeft
+              weight="bold"
+              className="relative text-3xl text-yellow-theme top-px"
+            />
+            <p className="text-xl text-gray-900 font-murecho">
+              {t("label.previous")}
+            </p>
+          </div>
+          <h1 className="relative hidden text-4xl select-none md:block text-purple-theme lg:text-6xl font-murecho bottom-2">
+            {t("title")}
+          </h1>
+          <div
+            onClick={handleNext}
+            className="flex items-center gap-1 transition cursor-pointer select-none hover:brightness-110"
+          >
+            <p className="text-xl text-gray-900 font-murecho">
+              {t("label.next")}
+            </p>
+            <CaretDoubleRight
+              weight="bold"
+              className="relative text-3xl top-px text-yellow-theme"
+            />
+          </div>
         </div>
-        <div
-          className="flex transition-transform duration-500 ease-in-out"
-          style={{ transform: `translateX(-${currentProject * 100}%)` }}
-        >
-          {projectsData.map((project, index) => (
-            <div key={index} className="min-w-full">
-              <ProjectCard
-                img={project.img}
-                tech={project.tech}
-                repo={project.repo}
-                deploy={project.deploy}
-                title={t(project.titleKey)}
-                points={[
-                  t(project.point1Key),
-                  t(project.point2Key),
-                  t(project.point3Key),
-                  t(project.point4Key),
-                  t(project.point5Key),
-                ]}
-              />
-            </div>
-          ))}
-        </div>
-        <div
-          onClick={handleNext}
-          className="hidden md:block z-10 absolute top-[35%] md:top-[50%] cursor-pointer -translate-y-[50%] right-[20%] lg:right-3 text-7xl transition hover:brightness-125"
-        >
-          <CaretDoubleRight className="translate-x-3 translate-y-1/2 text-purple-theme" />
-          <CaretDoubleRight className="-translate-y-1/2 text-yellow-theme" />
+
+        <div className="relative flex flex-col items-center justify-center h-full gap-5 overflow-hidden w-screen lg:w-[80vw]">
+          <div
+            className="flex transition-transform duration-500 ease-in-out"
+            style={{ transform: `translateX(-${currentProject * 100}%)` }}
+          >
+            {projectsData.map((project, index) => (
+              <div key={index} className="min-w-full">
+                <ProjectCard
+                  img={project.img}
+                  tech={project.tech}
+                  repo={project.repo}
+                  deploy={project.deploy}
+                  title={t(project.titleKey)}
+                  points={[
+                    t(project.point1Key),
+                    t(project.point2Key),
+                    t(project.point3Key),
+                    t(project.point4Key),
+                    t(project.point5Key),
+                  ]}
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

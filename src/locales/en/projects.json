@@ -1,12 +1,11 @@
 {
-  "title": "Recent Projects",
+  "title": "Projects",
   "subtitle": "Applying modern technologies to create real solutions.",
   "label": {
-    "description": "Description:",
-    "challenge": "Challenges:",
-    "solution": "Solution:",
     "repository": "repository",
-    "deploy": "check out this project!"
+    "deploy": "check out this project!",
+    "next": "next",
+    "previous": "previous"
   },
   "project1": {
     "title": "Laschisa Coffee Shop",

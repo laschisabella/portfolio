@@ -28,7 +28,7 @@ const InputField = ({
   type?: string;
   required?: boolean;
 }) => (
-  <div className="flex gap-3 px-5 py-4 select-none bg-gray-600/10 backdrop-blur-sm text-purple-theme rounded-xl">
+  <div className="flex gap-3 px-5 py-4 select-none bg-purple-theme/20 backdrop-blur-sm text-purple-theme rounded-xl">
     <Icon size={32} />
     <label className="sr-only">{placeholder}</label>
     <input
@@ -54,7 +54,7 @@ const TextareaField = ({
   rows?: number;
   required?: boolean;
 }) => (
-  <div className="flex gap-3 px-5 py-4 select-none bg-gray-600/10 backdrop-blur-sm text-purple-theme rounded-xl">
+  <div className="flex gap-3 px-5 py-4 select-none bg-purple-theme/20 backdrop-blur-sm text-purple-theme rounded-xl">
     <Icon size={32} />
     <label className="sr-only">{placeholder}</label>
     <textarea
@@ -109,7 +109,7 @@ const ContactForm = () => {
     <form
       ref={form}
       onSubmit={sendEmail}
-      className="flex flex-col gap-3 py-5 w-full lg:w-[30vw]"
+      className="flex flex-col gap-3 py-5 w-full lg:w-[30vw] p-10"
     >
       <InputField
         icon={IdentificationCard}
@@ -157,8 +157,8 @@ export default function Contact() {
       className="flex items-center justify-center bg-[url('/src/assets/services-bg.png')] min-h-screen bg-gray-100"
       id="contact"
     >
-      <div className="flex flex-col items-center justify-center h-full gap-20 lg:flex-row">
-        <div className="flex flex-col items-center justify-center pt-16 lg:pt-0">
+      <div className="flex flex-col items-center justify-center h-full gap-20 px-0 py-10 lg:flex-row">
+        <div className="flex flex-col items-center justify-center">
           <h1 className="pb-2 text-3xl uppercase lg:text-5xl text-purple-theme font-murecho">
             {t("title")}
           </h1>
@@ -177,7 +177,7 @@ export default function Contact() {
         </div>
         <div className="flex flex-col items-center">
           <p className="text-lg font-murecho">{t("social")}</p>
-          <div className="flex flex-col lg:flex-row text-[2.2rem] lg:text-[2.5rem] lg:gap-3 pb-10 pt-3">
+          <div className="flex flex-col lg:flex-row text-[2.2rem] lg:text-[2.5rem] gap-3 pb-10 pt-3">
             <a
               href="https://www.linkedin.com/in/isabella-laschi/"
               aria-label="LinkedIn"
@@ -206,7 +206,9 @@ export default function Contact() {
               <p className="text-lg font-bold">WhatsApp</p>
             </a>
           </div>
-          <p className="text-lg">{t("form")}</p>
+          <p className="p-3 text-lg text-center lg:text-left font-murecho">
+            {t("form")}
+          </p>
           <ContactForm />
         </div>
       </div>
