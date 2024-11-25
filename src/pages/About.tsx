@@ -34,8 +34,8 @@ const ResumeLink = ({ cvPt, text }: { cvPt: boolean; text: string }) => (
     <a
       href={
         cvPt
-          ? "https://drive.google.com/file/d/1zhw6fc4zUAiqo94OcQWkcz-DTq4Skf4n/view?usp=sharing"
-          : "https://drive.google.com/file/d/1Lt6UGmqBXSKZ9WO8e8BqkZdY_Wl4nl-L/view?usp=sharing"
+          ? "https://drive.google.com/file/d/1GWagztNk4LseEFDgqFhEK3LFPE67hjPG/view?usp=sharing"
+          : "https://drive.google.com/file/d/1-tWqkZen1WPNTOEf7eoNEjXlBWEx-fZL/view?usp=sharing"
       }
       target="_blank"
       rel="noopener noreferrer"
